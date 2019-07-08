@@ -1,0 +1,195 @@
+page{
+  background-color: #f2f2f2;
+  font-size: 26rpx;
+  color: #4d4c4c;
+}
+.index-nav{
+  background-color: #fff;
+  position: relative;
+  font-size:26rpx;
+  width: 100%;
+  padding-bottom: 90rpx;
+}
+.index-nav .dzjx_bg{
+  width: 100%;
+  height: 252rpx;
+}
+.shopkeeper{
+  position: absolute;
+  left:20rpx;
+  bottom: 18rpx;
+}
+.shopkeeper .shoph{
+  background-color: #fff;
+  border-radius: 5px;
+  width: 140rpx;
+  height: 140rpx;
+}
+.shopkeeper .shoph image{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 6rpx;
+}
+.shopkeeper .shopmess{
+  position: absolute;
+  left:154rpx;
+  width:300rpx;
+  bottom:0; 
+}
+.shopkeeper .shopmess text{
+  display: block;
+}
+.shopkeeper .firname{
+  font-size: 30rpx;
+  color: #373737;
+  line-height: 38rpx;
+}
+.shopkeeper .secname{
+  color: #6a6a6a;
+  font-size: 26rpx;
+}
+.shelves{
+  background-color: #fff;
+  height: 50rpx;
+  width: 130rpx;
+  position: absolute;
+  top: 14rpx;
+  right: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border:solid 1px #cfcfcf;
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  color: #d30000;
+}
+
+.goodsList{
+  margin: 10rpx 0;
+}
+
+.goods{
+  background-color: #fff;
+  padding: 20rpx;
+  margin-bottom: 10rpx;
+  position: relative;
+}
+.goods text{
+  display: block;
+}
+.goodsPic{
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.goodsInfo{
+  width: 510rpx;
+  float: left;
+}
+.goodsName{
+  font-size: 26rpx;
+}
+.goodsDes{
+  font-size: 22rpx;
+}
+.goods .goodsPrice{
+  display: inline-block;
+  padding: 20rpx 20rpx 16rpx 0 ;
+  color: #373737;
+}
+.goods  text.goodsearn{
+  display: inline-block;
+  color: #d50000;
+}
+text.goodsNum{
+  font-size:22rpx;
+  color: #a3a3a3;
+}
+.opration{
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+.btn{
+  height: 44rpx;
+  padding: 0 30rpx;
+  margin-left: 12rpx;
+  line-height: 44rpx;
+  display: inline-block;
+  border: solid 1px #505050;
+  border-radius: 6rpx;
+}
+.btn-share{
+  border: solid 1px #d50000;
+  color: #d50000;
+}
+.offFlag{
+  width: 116rpx;
+  height: 116rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 100rpx;
+}
+/*下架*/
+.off{
+  -webkit-filter: grayscale(100%);
+    filter: gray;
+}
+.goods.off text,
+.goods.off .goodsPrice,
+.goods.off  text.goodsearn{
+  color: #9e9e9e;
+}
+.off .btn{
+  color: #9e9e9e;
+  border: solid 1px #9e9e9e;
+}
+
+.goodsNull{
+   padding: 40rpx 0;
+    color: #999;
+    text-align: center;
+}
+.goodsNullbox{
+  margin-bottom:  120rpx;
+}
+.goodsChoice {
+  margin: 30rpx 0;
+}
+.choice[type="primary"]{
+  margin:0 65rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #c40000;
+  font-size: 30rpx;
+  color: #fff;
+  letter-spacing: 4rpx;
+}
+.footer{
+  background:#f9f9f9;
+  color:#a9b7b7;
+  font-size: 24rpx;
+  text-align: center;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  padding: 10rpx 0 5rpx;
+}
+.footer navigator{
+  display: inline-block;
+  width: 25%;
+}
+.footer navigator image{
+
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin: 0 auto 8rpx;
+}
+.footer .cur{
+  color: #1b1b1b
+}
+.blank{
+  height: 97rpx
+}

@@ -1,0 +1,30 @@
+<view class="reservation">
+  <view class="title">素材发布</view>
+  <view class="remark">
+    <textarea bindinput="textareaInput" auto-height placeholder="请在此处添加你的心得简单描述（50字以内）" />
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files">
+            <block wx:for="{{imageList}}" wx:key="imageList" wx:for-item="image" wx:for-index="idx">
+              <view class="weui-uploader__file">
+                <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                <view class="imgClear" data-id="{{idx}}" bindtap="clearImg">×</view>
+              </view>
+            </block>
+            <view class="weui-uploader__input-box" wx:if="{{chooseImageFlage}}">
+              添加图片
+              <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <view class="fr color2" bindtap="saveTap"><image src="/image/download1.png"></image>发布</view>
+    <view class="fr color1" bindtap="resetTap"><image src="/image/download2.png"></image>取消</view>
+  </view>
+</view>

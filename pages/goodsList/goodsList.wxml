@@ -1,0 +1,42 @@
+<view class="search">
+  <input placeholder="请输入药品名称、品牌或症状" focus="{{search}}" bindfocus="showSearch" bindinput="bindKeywordInput" value="{{keywords}}" />
+  <image src="/image/search.png" class="btn-search" bindtap="search"></image>
+</view>
+<view wx:if="{{!search}}">
+  <view class="tab">
+    <block wx:for="{{tabList}}" wx:key="{{index}}">
+      <view id="{{index}}" data-id="{{item.id}}" class="tabList {{activeIndex == index ? 'on' : ''}}" bindtap="tabClick">
+        <view>{{item.listTit}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="goodsList" wx:if="{{goodsList.length}}">
+    <navigator wx:for="{{goodsList}}" wx:key="goodsList" url="{{item.is_rx == 1 ? '/pages/recipegoodsDetail/recipegoodsDetail' : '/pages/goodsDetail/goodsDetail'}}?id={{item.id}}" class="goods">
+      <image class="goodsPic" src="{{item.pictures}}" wx:if="{{item.picture}}"></image>
+      <image class="goodsPic" src="/image/category-img-404.png" wx:else></image>
+      <view class="goodsInfo">
+        <text wx:if="{{item.is_hot==1}}" class="spacial">特卖</text>
+        <text wx:if="{{item.is_rx == 1}}" class="spacialdis">Rx</text>
+        <text class="goodsName">{{item.name}}</text>
+        <text class="goodsDes">{{item.effect}}</text>
+        <!--view class="prescription">
+          <text wx:if="{{item.is_rx == 1}}">处方药</text>
+        </view-->
+        <text class="goodsPrice">￥{{item.price}}</text>
+        <text class="price_income" wx:if="{{user.level_id >= 2}}">赚{{item.money_1}}元</text>
+        <text class="goodsStock">库存：{{item.stock}}</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="goodsNull" wx:else>暂无商品</view>
+</view>
+<!-- 搜索  -->
+<view wx:else class="serchbox">
+  <view class="tip">
+    <image src="/image/search.png" class="btn-search"></image>
+    热门搜索
+  </view>
+  <view class="popSearch" wx:for="{{popSearch}}" wx:key="search" id="{{popSearch.id}}">
+    <text bindtap="keywordsName" data-name="{{item.name}}">{{item.name}}</text>
+  </view>
+</view>

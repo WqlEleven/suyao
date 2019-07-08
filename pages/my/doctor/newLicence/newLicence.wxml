@@ -1,0 +1,8 @@
+<input class='code' bindinput="licenceInput" type='text' value='{{licenceId}}' placeholder='输入医师资格证书编码'></input>
+
+<view class="uploading-tit">新版医师执业证信息页（单页）</view>
+<view class="uploading-image" bindtap='chooseImage'>
+  <image src="{{licenceInfoImg}}" mode='widthFix'></image>
+</view>
+<view class='blank'></view>
+<view class="btn-submit" bindtap='submit'>确认</view>

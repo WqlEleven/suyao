@@ -1,0 +1,8 @@
+<navigator open-type="redirect" url="/pages/my/visit/visitDetail/visitDetail" class="btn-help right"> 邀请明细</navigator>
+<image class="visit clearfix" mode="widthFix" src="/image/visit.png"></image>
+<view class="btn-save">
+    <button style="background-color: #c40000;color:#fff" open-type="share">邀请小伙伴</button>
+</view>
+<view class="btn-back">
+    <button style=" background-color: #8bd700; margin-top:1rem;color:#fff" bindtap="back">返回</button>
+</view>

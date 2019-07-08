@@ -1,0 +1,46 @@
+<view class="orderInfo item">
+   <view class="text">状态：
+      <text class="red" wx:if="{{order.status==0}}">待付款</text>
+      <text class="red" wx:if="{{order.status==1}}">已取消</text>
+      <text class="red" wx:if="{{order.status==2}}">待发货</text>
+      <text class="red" wx:if="{{order.status==3}}">待收货</text>
+      <text class="red" wx:if="{{order.status==4}}">已完成</text>
+   </view>
+   <text class="text">订单编号：{{order.order_no}}</text>
+   <text class="text">下单时间：{{order.add_time}}</text>
+</view>
+<view class="opration">
+   <view class="pay btn" wx:if="{{order.status==0}}" id="{{order.id}}" bindtap="goToPay">去支付</view>
+   <view class="cancel btn" wx:if="{{order.status==0}}" id="{{order.id}}" bindtap="orderDel">取消订单</view>
+   <view class="pay btn" wx:if="{{order.status==3}}" id="{{order.id}}" bindtap="receiptGoods">确认收货</view>
+   <view class="cancel btn" wx:if="{{order.status >1}}" id="{{order.id}}" bindtap="returnGoods">申请退货</view>
+   <view class="cancel btn" wx:if="{{order.status==4}}" id="{{order.id}}" bindtap="orderDel">删除订单</view>
+</view>
+<!-- 收货人信息 -->
+<view class="receiver item">
+   <view class="text">收件人：{{address.name}} <text class="tel">{{address.mobile}}</text></view>
+   <text class="text">收货地址：{{address.province}}{{address.city}}{{address.country}}{{address.address}}</text>
+   <text class="text">备注：{{order.remark}}</text>
+</view>
+<!-- 商品信息 -->
+<view class="goddsInfo item">
+   <view class="goodsTotlaNum">共计{{goodsNum}}件商品</view>
+   <view wx:for-items="{{order.goods_list}}" wx:key="goods" wx:for-item="goods" class="goodsListItem overHidden">
+      <image class="goodsPic" src="{{goods.picture}}"></image>
+      <view class="goodsInfo">
+         <text class="goodsName">{{goods.name}}</text>
+         <text class="goodsDes">{{goods.effect}}</text>
+      </view>
+      <view class="PriceNum">
+         <text class="goodsPrice">￥{{goods.price}}</text>
+         <text class="goodsNum">×{{goods.num}}</text>
+      </view>
+   </view>
+   <view class="priceDetail">
+      商品金额：<text class="black">¥{{order.money}}</text> 优惠金额：<text class="red">¥{{order.discount}}</text> 运费：<text>¥{{order.freight}}</text>
+   </view>
+</view>
+<!--价钱合计-->
+<view class="money item">
+   共计：<text class="red">¥{{order.total}}</text>
+</view>

@@ -1,0 +1,24 @@
+.wrap {
+  margin-top: 50rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap .head {
+  width: 200rpx;
+}
+
+.wrap .nick-name {
+  font-size: 0.8em;
+}
+
+.wrap .notice {
+  margin: 50rpx 0;
+}
+
+.wrap button {
+  width: 100%;
+}

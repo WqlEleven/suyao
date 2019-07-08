@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "速药",
+  "usingComponents": {
+    "user-auth": "/pages/component/UserAuth/UserAuth"
+  }
+}

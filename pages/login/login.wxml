@@ -1,0 +1,17 @@
+  <!-- <loading hidden="{{loadingHidden}}">正在加载...</loading>   -->
+<scroll-view scroll-y="true" bindscrolltoupper="bindscrolltoupper" bindscrolltolower="bindscrolltolower" style="height: 100%">
+  <view class="logo">
+    <image src="/image/logo.png"></image>
+  </view>
+  <form >
+    <view class="user item">
+      <input id="phone" value="{{phone}}"  placeholder="输入您的手机号码"/>
+      <view class="btn-send" bindtap="sendCode">获取验证码</view>
+    </view>
+    <!-- <view class="error">{{error}} </view> -->
+    <view class="user item">
+      <input value="{{code}}"  placeholder="输入验证码"/>
+    </view>
+    <view class="btn item"><text>确认登录</text></view>
+  </form>
+</scroll-view>

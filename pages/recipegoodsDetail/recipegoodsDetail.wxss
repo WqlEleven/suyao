@@ -1,0 +1,531 @@
+@import "../../wxParse/wxParse.wxss";
+
+.tab {
+  width: 100%;
+  border-bottom: 1px solid #bebebe;
+  display: flex;
+}
+
+.tab .item {
+  flex: 1;
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 26rpx;
+  border-bottom: 2px solid #fff;
+}
+
+.tab .item.on {
+  border-bottom: 2px solid #d70000;
+}
+
+scroll-view {
+  margin-bottom: 30rpx;
+  background-color: #fff;
+}
+
+swiper {
+  height: 748rpx;
+}
+
+swiper image {
+  display: block;
+  width: 100%;
+  height: 748rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  color: #333;
+  padding: 20rpx 20rpx 0 20rpx;
+  line-height: 40rpx;
+}
+
+.title .type {
+  color: #d60005;
+  font-size: 20rpx;
+  height: 30rpx;
+  border: 1px solid #d60005;
+  margin-right: 15rpx;
+  padding: 3rpx 7rpx;
+}
+
+.title .typedis {
+  color: #fff;
+  font-size: 20rpx;
+  padding: 4rpx 13rpx;
+  background: #d60005;
+  border-radius: 18rpx;
+}
+
+.title .des {
+  color: #727272;
+  margin-left: 14rpx;
+}
+
+.mess {
+  font-size: 24rpx;
+  color: #de0000;
+  padding: 10rpx 20rpx 0 20rpx;
+  position: relative;
+}
+
+.video {
+  width: 100%;
+}
+
+.video video {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.price {
+  font-size: 36rpx;
+  color: #d60005;
+  padding: 20rpx 22rpx 0 0;
+  text-align: right;
+  position: relative;
+}
+
+.price text {
+  font-size: 18rpx;
+}
+
+.footer {
+  background-color: #fff;
+  border-top: 1px solid #d4d4d4;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 26rpx;
+  height: 98rpx;
+  text-align: center;
+  z-index: 9;
+}
+
+.footer .home {
+  color: #949494;
+  width: 17%;
+  float: left;
+}
+
+.footer .home image {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  margin-top: 10rpx;
+}
+
+.footer .home text {
+  display: block;
+}
+
+.footer text.addcar, .footer text.buynow {
+  color: #fff;
+  width: 24.5%;
+  float: left;
+  line-height: 98rpx;
+  display: block;
+}
+
+.footer text.addcar {
+  background-color: #68aa00;
+}
+
+.footer text.buynow {
+  background-color: #ff9c00;
+}
+.hint{
+  padding: 30rpx;
+  background:#fef9e3;
+  font-size: 24rpx;
+  line-height:36rpx;
+  color:#727272;
+}
+.size {
+  padding: 0 20rpx;
+  font-size: 26rpx;
+  border-top: 1px solid #bebebe;
+  line-height: 90rpx;
+  position: relative;
+}
+
+.select {
+  width: 32rpx;
+  height: 32rpx;
+  float: right;
+  margin-top: 30rpx;
+}
+
+.pru-tab {
+  background-color: #d70000;
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 100rpx;
+}
+
+.pru-tab text {
+  text-align: center;
+  width: 50%;
+  display: inline-block;
+}
+
+.pru-tab text.active {
+  background-color: #9f0000;
+}
+
+.pru-tab-mess {
+  padding: 10rpx 20rpx 39rpx;
+  font-size: 26rpx;
+  color: #3a3a3a;
+  overflow: hidden;
+}
+
+.pru-tab-mess .item {
+  font-size: 26rpx;
+  border-bottom: 1px solid #f3f3f3;
+  line-height: 52rpx;
+}
+
+.proBg {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 26rpx;
+  z-index: 11;
+}
+
+.proBg .pro-box {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.proBg .pro-buy {
+  padding: 28rpx 35rpx 10rpx;
+}
+
+.proBg .pro-mess {
+  border-bottom: 1px solid #ededed;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+}
+
+.proBg .pro-mess .img {
+  width: 139rpx;
+  height: 139rpx;
+  float: left;
+}
+
+.proBg .pro-mess .img image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.proBg .pro-mess .pro-ses {
+  float: left;
+  margin-left: 28rpx;
+}
+
+.proBg .pro-mess .pro-ses text {
+  display: block;
+}
+
+.proBg .pro-mess .pro-ses text.des {
+  font-size: 24rpx;
+  color: #4d4c4c;
+}
+
+.proBg .pro-mess .pro-ses text.name {
+  padding-top: 14rpx;
+  color: #4d4c4c;
+  line-height: 40rpx;
+}
+
+.proBg .pro-mess .pro-ses text.price {
+  text-align: left;
+}
+
+.proBg .specy {
+  padding-top: 40rpx;
+  line-height: 40rpx;
+  height: 50rpx;
+}
+
+.proBg .specy .item {
+  border: 1px solid #505050;
+  border-radius: 2px;
+  margin-left: 18rpx;
+  padding: 10rpx 15rpx;
+}
+
+.proBg .specy .item.active {
+  background-color: #d70000;
+  color: #fff;
+  border: 1px solid #d70000;
+}
+
+.proBg .number {
+  padding: 30rpx 0 40rpx;
+  line-height: 40rpx;
+}
+
+.proBg .number text {
+  border: 1px solid #505050;
+  padding: 10rpx 24rpx;
+}
+
+.proBg .number text.num {
+  padding: 10rpx 36rpx;
+  border-left: 0;
+  border-right: 0;
+}
+
+.proBg .buycar, .proBg .buy {
+  width: 50%;
+  color: #fff;
+  text-align: center;
+  float: left;
+  line-height: 90rpx;
+}
+
+.proBg .buycar {
+  background-color: #68aa00;
+}
+
+.proBg .buy {
+  background: #ff9c00;
+}
+
+.material {
+  border-bottom: 10rpx solid #f2f2f2;
+  min-height:890rpx;
+}
+
+.material .item {
+  padding: 0 30rpx;
+  border-bottom: 1px solid #bebebe;
+}
+
+.material .no-item{
+  text-align: center;
+  line-height:100rpx;
+  border:none;
+}
+
+.material .title {
+  padding: 20rpx 0;
+  display: flex;
+  line-height: 55rpx;
+}
+
+.material .title image {
+  width: 55rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.material .con {
+  color: #2d2d2d;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  padding-bottom: 10rpx;
+}
+
+.material .img_box {
+  overflow: hidden;
+}
+
+.material .img_box image {
+  width: 215rpx;
+  height: 215rpx;
+  margin-right: 25rpx;
+  margin: 10rpx 25rpx 10rpx 0;
+  float: left;
+}
+
+.material .img_box image:nth-child(3n) {
+  margin-right: 0;
+}
+
+.bottom_clear {
+  padding-bottom: 20rpx;
+  overflow: hidden;
+  padding-top: 10rpx;
+}
+
+.bottom_clear .fl {
+  float: left;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  color: #727272;
+}
+
+.bottom_clear .fr {
+  float: right;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  color: #2d2d2d;
+}
+
+.bottom_clear .fr image {
+  display: block;
+  float: left;
+  width: 30rpx;
+  height: 30rpx;
+  margin:0 20rpx;
+}
+
+.pos_bottom {
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  padding: 23rpx 30rpx;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.pos_bottom .fl {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.pos_bottom .fr {
+  float: right;
+  padding: 15rpx 30rpx;
+  background: #d30000;
+  line-height: 30rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}
+
+.pos_bottom .fr image {
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.blank {
+  height: 108rpx;
+}
+
+.hide {
+  display: none;
+}
+
+.close {
+  position: absolute;
+  top: 34rpx;
+  right: 30rpx;
+  width: 45rpx;
+  height: 45rpx;
+  display: block;
+}
+
+.footer .home {
+  position: relative;
+  height: 98rpx;
+}
+
+.footer .home button {
+  background: transparent;
+  font-size: 26rpx;
+  color: #949494;
+  line-height: 45rpx;
+  padding-top: 55rpx;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+}
+
+.footer .home button:after {
+  border: 0;
+}
+
+.shares {
+  background: rgba(0, 0, 0, 0.5);
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 60rpx;
+  right: 40rpx;
+  overflow: hidden;
+}
+
+.btn_share {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 15rpx auto;
+  display: block;
+}
+
+.shareBox {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.shareBox .win_share {
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 40rpx 0;
+  z-index: 22;
+}
+
+.shareBox .win_share .share1 {
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+
+.shareBox .win_share .share1 image {
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+}
+
+.shareBox .win_share .share1 text {
+  display: block;
+  margin-top: 20rpx;
+}
+
+.blankShare {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80%;
+}
+
+.shareBox button {
+  background: transparent;
+  font-size: 26rpx;
+  color: #414141;
+  line-height: 45rpx;
+}
+
+.shareBox button::after {
+  border: 0;
+  font-size: 26rpx;
+  background-color: fff;
+}
+
+.shareBox .win_share .share1 button text {
+  display: block;
+  margin-top: 13rpx;
+}

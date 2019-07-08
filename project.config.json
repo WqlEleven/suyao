@@ -1,0 +1,75 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.0",
+	"appid": "wx5c9a9dfedd838fd2",
+	"projectname": "%E9%80%9F%E8%8D%AF",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "套餐列表",
+					"pathName": "pages/my/gift/giftlist/giftlist",
+					"query": "id=1&parent_id=2",
+					"scene": "1001"
+				},
+				{
+					"id": 1,
+					"name": "商品套餐",
+					"pathName": "pages/prescriptDetail/prescriptDetail",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "医师登记",
+					"pathName": "pages/my/doctor/doctor",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "选择医院",
+					"pathName": "pages/my/doctor/hospital/hospital",
+					"query": "province_id=2&city_id=33"
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/fenlei/fenlei",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索商品列表",
+					"pathName": "pages/goodsList/goodsList",
+					"query": ""
+				}
+			]
+		}
+	}
+}

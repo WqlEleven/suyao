@@ -1,0 +1,16 @@
+page{
+  background-color: #fff;
+  font-size: 30rpx;
+  color: #3f3f3f;
+  line-height: 54rpx;
+}
+.title{
+  margin-top: 40rpx;
+  margin-bottom: 10rpx;
+  background-color: #c40000;
+  padding: 0 40rpx;
+  color: #fff;
+}
+.text{
+  padding: 0 40rpx;
+}

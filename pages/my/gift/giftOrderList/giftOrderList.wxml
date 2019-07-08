@@ -1,0 +1,77 @@
+<view class="tab">
+   <block wx:for-items="{{list}}" wx:for-item="item" wx:key="{{index}}">
+      <view id="{{index}}" data-id="{{item.id}}" class="tabList {{activeIndex == index ? 'on' : ''}}" bindtap="tabClick">
+         <view>{{item.listTit}}</view>
+      </view>
+   </block>
+</view>
+<view class="orderList">
+   <block wx:if="{{orderList}}" wx:key="{{order}}" wx:for-items="{{orderList}}">
+      <view class="orderItem">
+         <view class="headerInfo overHidden clearfix">
+
+            <text wx:if="{{item.userStatu == 0}}" class="userStatu seller">卖</text>
+            <text wx:elif="{{item.userStatu == 1}}" class="userStatu buyers">买</text>
+            <text wx:else="{{item.userStatu == 2}}" class="userStatu"></text>
+
+            <text class="orderNo">订单号：{{item.order_no}}</text>
+            <text class="time">{{item.add_time}}</text>
+            <text class="statu right" wx:if="{{item.status==0}}">待付款</text>
+            <text class="statu right" wx:if="{{item.status==1}}">已取消</text>
+            <text class="statu right" wx:if="{{item.status==2}}">待发货</text>
+            <text class="statu right" wx:if="{{item.status==3}}">待收货</text>
+            <text class="statu right" wx:if="{{item.status==4}}">已完成</text>
+         </view>
+
+         <view id="{{item.orderNo}}" data-id="{{item.id}}" bindtap="showOrder">
+            <view wx:for-items="{{item.goods_list}}" wx:key="{{goods_list}}" wx:for-item="goods" class="goodsListItem overHidden">
+               <image class="goodsPic" src="{{goods.picture}}"></image>
+               <view class="goodsInfo">
+                  <text class="goodsName">{{goods.name}}</text>
+                  <text class="goodsDes">{{goods.effect}}</text>
+               </view>
+               <view class="PriceNum">
+                  <text class="goodsPrice">￥{{goods.price}}</text>
+                  <text class="goodsNum">×{{goods.num}}</text>
+               </view>
+            </view>
+         </view>
+
+         <view class="priceDetail overHidden">
+            <view class="text money">实付款：<text>¥{{item.money}}</text></view>
+            <view class="text postage">（含运费：¥{{item.freight}}）</view>
+            <view class="text discount">节省：¥{{item.discount}}</view>
+         </view>
+         <view class="opration clearfix">
+            <view class="del right" id="{{item.id}}" wx:if="{{item.status==0}}" bindtap="goToPay">付款</view>
+            <view class="del right" id="{{item.id}}" wx:if="{{item.status==1}}" bindtap="goToPay">付款</view>
+            <view class="del right" id="{{item.id}}" wx:if="{{item.status==3}}" bindtap="receiptGoods">确认收货</view>
+            <view class="del right" data-id="{{item.id}}" bindtap="showOrder">查看订单</view>
+            <view class="del right" id="{{item.id}}" wx:if="{{item.status==0}}" bindtap="cancelOrder">删除</view>
+            <view class="del right" id="{{item.id}}" wx:if="{{item.status==4}}" bindtap="cancelOrder">删除</view>
+         </view>
+      </view>
+   </block>
+   <view wx:if="{{!emptyOrder}}"> 
+      <view class="nullOrder">您还没有购买过任何东西！</view>
+   </view>
+</view>
+<view class="blank"></view>
+<view class="footer">
+  <navigator url="../index/index" bindtap="home">
+     <image src="/image/home.png"></image>
+    首页
+  </navigator>
+  <navigator url="/pages/selection/selection" bindtap="selection">
+     <image src="/image/dzjx.png"></image>
+    店主精选
+  </navigator>
+  <navigator url="/pages/car/car" bindtap="car">
+     <image src="/image/car.png"></image>
+    购物车
+  </navigator>
+  <navigator url="/pages/my/my" class="cur" bindtap="my">
+     <image src="/image/my1.png"></image>
+    我的
+  </navigator>
+</view>

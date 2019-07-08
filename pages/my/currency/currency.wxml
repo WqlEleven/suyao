@@ -1,0 +1,6 @@
+<!--pages/my/currency/currency.wxml-->
+<view class="item" wx:for="{{currencyList}}" wx:key="currency">
+  <text class="profitDes">{{item.content}}</text>
+  <text>{{item.add_time}}</text>
+  <text class="red profit">+{{item.currency}}</text>
+</view>

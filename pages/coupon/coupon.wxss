@@ -1,0 +1,143 @@
+/* pages/coupon/coupon.wxss */
+page{
+  background-color: #f2f2f2;
+  color: #6b6b6b;
+}
+.tab{
+  border-top:solid 1rpx #9f0000;
+  background-color: #c40000;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+}
+.tabList{
+  width: 375rpx;
+  float: left;
+}
+.tabList.on{
+  background-color: #9f0000;
+}
+.btn-help{
+  margin:30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #f24f52;
+  font-size: 30rpx;
+  color: #fff;
+  letter-spacing: 4rpx;
+}
+.ticketList{  
+  margin:0 30rpx;
+}
+.ticket{
+  height: 180rpx;
+  margin-bottom: 12rpx;
+  background-color: #fff;
+  border-bottom: solid 1px #c9c9c9;
+  border-right: solid 1px #e0e0e0;
+}
+.ticket text{
+  display: block
+}
+.ticketInfo{
+  width: 150rpx;
+  height: 180rpx;
+  float: left;
+  padding: 0 10rpx;
+  background-color: #f24f52;
+  color: #fff;
+  font-size: 20rpx;  
+  text-align: center;
+  position: relative
+}
+.ticketBg{
+  position: absolute;
+  width: 170rpx;
+  height: 180rpx;
+  top:0;
+  left:0;
+}
+.ticketBg image{
+  width: 6rpx;
+  height: 180rpx;
+  position: absolute;
+  right: 0;
+  top:0
+}
+.ticketBg1{
+  position: absolute;
+  width: 170rpx;
+  height: 180rpx;
+  top:0;
+  left:0;
+}
+.ticketBg1 image{
+  width: 6rpx;
+  height: 180rpx;
+  position: absolute;
+  right: 0;
+  top:0
+}
+.name{
+  padding-top: 10rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  color: #fcb5af;
+}
+.money{
+  height: 85rpx;
+  line-height: 85rpx;
+  font-size: 48rpx;
+}
+.money text{
+  display: inline-block;
+  font-size: 36rpx;
+}
+.use{
+  height: 46rpx;
+  line-height: 46rpx;
+  border-top: solid 1px #fcb5af;
+}
+.ticketLimit{
+  width: 447rpx;
+  padding: 30rpx 36rpx;
+  line-height: 42rpx;
+  float: left;
+}
+.used{
+  -webkit-filter: grayscale(100%);
+    filter: gray;
+}
+.used.ticketInfo{
+  background-color: #a0a0a0;
+}
+.footer{
+  background:#f9f9f9;
+  color:#a9b7b7;
+  font-size: 24rpx;
+  text-align: center;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  padding: 10rpx 0 5rpx;
+}
+.footer navigator{
+  display: inline-block;
+  width: 25%;
+}
+.footer navigator image{
+
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin: 0 auto 8rpx;
+}
+.footer .cur{
+  color: #1b1b1b
+}
+.blank{
+  height: 97rpx
+}

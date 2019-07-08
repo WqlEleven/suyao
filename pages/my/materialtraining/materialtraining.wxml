@@ -1,0 +1,97 @@
+<view class="index-nav">
+  <image src="/image/dzjx_bg.png" class="dzjx_bg"></image>
+  <view class="shares" bindtap="shareShow">
+    <image src="/image/btn_share.png" class="btn_share"></image>
+  </view>
+  <view class="shopkeeper">
+    <view class="shoph">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="shopmess">
+      <text class="firname">{{shoptype}}</text>
+      <text class="secname">{{userInfo.nickName}}(UID:{{user.id}})</text>
+    </view>
+  </view>
+  <view class="usertype" wx:if="{{user.level_id == 0}}">访客</view>
+  <view class="usertype" wx:elif="{{user.level_id == 1}}">顾客</view>
+  <view class="usertype" wx:elif="{{user.level_id == 2}}">店主</view>
+  <view class="usertype" wx:elif="{{user.level_id == 3}}">精英店主</view>
+  <view class="usertype" wx:elif="{{user.level_id == 4}}">总监</view>
+  <view class="usertype" wx:elif="{{user.level_id == 5}}">总裁</view>
+  <view class="usertype" wx:elif="{{user.level_id == 6}}">股东</view>
+  <view class="usertype" wx:else>未知</view>
+</view>
+<view class="nav titNav">
+  <view id="1" data-index="0" bindtap='nav1Click' class="item {{conIndex == 0 ? 'on' : ''}}">速药培训</view>
+  <view id="2" data-index="1" bindtap='nav1Click' class="item {{conIndex == 1 ? 'on' : ''}}">产品培训</view>
+</view>
+<view class="nav">
+  <view data-index="0" bindtap='navClick' class="item {{tabIndex == 0 ? 'on' : ''}}">
+    <image src="{{tabIndex == 0 ? '/image/nav1_on.png':'/image/nav1.png'}}"></image>视频</view>
+  <view data-index="1" bindtap='navClick' class="item {{tabIndex == 1 ? 'on' : ''}}">
+    <image src="{{tabIndex == 1 ? '/image/nav2_on.png':'/image/nav2.png'}}"></image>PPT</view>
+  <view data-index="2" bindtap='navClick' class="item {{tabIndex == 2 ? 'on' : ''}}">
+    <image src="{{tabIndex == 2 ? '/image/nav3_on.png':'/image/nav3.png'}}"></image>Word</view>
+</view>
+<view wx:if="{{tabIndex == 0}}">
+  <view class="video-item" wx:for="{{videoList}}" wx:key="videoList">
+    <view class="pic-box" data-url="{{item.url}}" bindtap='videoShow'>
+      <image class="bg" src="{{item.src}}"></image>
+      <image src="/image/play.png" class="play"></image>
+      <!--text>{{item.time}}</text-->
+    </view>
+    <view class="title">{{item.name}}</view>
+  </view>
+</view>
+<view wx:if="{{tabIndex == 1}}">
+  <view class="ppt-item" wx:for="{{pptList}}" wx:key="pptList">
+    <image class="icon" src="{{item.src}}"></image>
+    <view class="con">
+      <view class="h5">{{item.name}}</view>
+      <view class="p">{{item.content}}</view>
+    </view>
+    <view bindtap="viewTap" data-url="{{item.url}}">
+      <image class="load" src="/image/ppt-load.png"></image>
+    </view>
+    <!--view bindtap="downloadTap" data-url="{{item.url}}">
+      <image class="load" src="/image/ppt-load.png"></image>
+    </view-->
+  </view>
+</view>
+<view wx:if="{{tabIndex == 2}}">
+  <view class="ppt-item" wx:for="{{wordList}}" wx:key="wordList">
+    <image class="icon" src="{{item.src}}"></image>
+    <view class="con">
+      <view class="h5">{{item.name}}</view>
+      <view class="p">{{item.content}}</view>
+    </view>
+    <view bindtap="viewTap" data-url="{{item.url}}">
+      <image class="load" src="/image/ppt-load.png"></image>
+    </view>
+    <!--view bindtap="downloadTap" data-url="{{item.url}}">
+      <image class="load" src="/image/ppt-load.png"></image>
+    </view-->
+  </view>
+</view>
+<!-- 分享弹窗 -->
+<view class="shareBox" wx:if="{{shareBtn}}">
+  <view class="blankShare" catchtap="closeShare"></view>
+  <view class="win_share">
+    <view class="share1">
+      <!-- <text>分享给好友</text> -->
+      <button open-type="share">
+        <image src="/image/btn_wx.png"></image>
+        <text>分享给好友</text>
+      </button>
+    </view>
+    <view class="share1" catchtap="saveCode">
+      <image src="/image/btn_er.png"></image>
+      <text>保存二维码</text>
+    </view>
+  </view>
+</view>
+<!--视频弹层  -->
+<view class="shareBox" wx:if="{{isVideo}}">
+  <view class="blankShare" catchtap="closeShare"></view>
+  <video autoplay="true" src="{{videoUrl}}"></video>
+</view>

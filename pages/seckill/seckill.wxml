@@ -1,0 +1,45 @@
+<swiper display-multiple-items='{{timeSlot.length >= 5 ? 5 : timeSlot.length}}' class='timeSlot'>
+  <swiper-item wx:for="{{timeSlot}}" wx:key="timeSlot" data-state="{{item.state}}" data-index='{{index}}' bindtap="changeTab" class="item {{curIndex==index?'on':''}}">
+    <view class='time'>{{item.start_time}}</view>
+    <view class='statu' wx:if="{{item.state==0}}">即将开始</view>
+    <view class='statu' wx:if="{{item.state==1}}">抢购中</view>
+    <view class='statu' wx:if="{{item.state==2}}">已开始</view>
+  </swiper-item>
+</swiper>
+
+<view class='title'>
+  <text>抢购中，先下单先得哦</text>
+  <view wx:if="{{state==0}}" class='leaveTime'>距开始
+    <text>{{hour}}</text>:
+    <text>{{minute}}</text>:
+    <text>{{second}}</text>
+  </view>
+  <view wx:else class='leaveTime'>距结束
+    <text>{{hour}}</text>:
+    <text>{{minute}}</text>:
+    <text>{{second}}</text>
+  </view>
+</view>
+<block wx:if="{{goodsList.length > 0}}">
+  <view class='goodsItem' wx:for="{{goodsList}}" wx:key="goodsList">
+    <view class='goodsPic'>
+      <image src='{{item.pictures}}' mode='aspectFill'></image>
+    </view>
+    <view class='basicInfo'>
+      <view class='name'>{{item.name}}</view>
+      <view class='desc'>{{item.effect}}</view>
+      <view class='price'>{{item.price}}<text>￥{{item.price_original}}</text></view>
+      <view class='progress' wx:if="{{item.can_buy == 1}}">
+        <view class='inner' style='width:{{item.process}};'></view>
+        <view class='text'>已售{{item.process}}%</view>
+      </view>
+    </view>
+    <navigator url="{{item.is_rx == 1 ? '/pages/recipegoodsDetail/recipegoodsDetail' : '/pages/goodsDetail/goodsDetail'}}?id={{item.id}}" class='buy' wx:if="{{item.can_buy == 1}}">立即秒杀</navigator>
+    <view class='buy' wx:else>即将开始</view>
+  </view>
+</block>
+<block wx:else>
+  <view class='goodsItem'>
+    暂无秒杀商品
+  </view>
+</block>

@@ -1,0 +1,27 @@
+<navigator class="item" url="/pages/my/profitList/profitList">
+  <view>累计收益：<text class="red"> {{profitTotal}}</text></view>
+  <view class="text">您在速药平台所产生的相关收入，奖励，不包括因交易、货品产生的补偿金以及退款</view>
+  <image class="arrow_wrap" mode="widthFix" src="/image/icon-arrow.png"></image>
+</navigator>
+<view class="item">本月收益： {{profitMonth}}</view>
+<view class="item">本日收益： {{profitDay}}</view>
+<view class="item">上月收益： {{profitLastMonth}}</view>
+<view class="blank"></view>
+<view class="footer">
+  <navigator url="../index/index" bindtap="home">
+     <image src="/image/home.png"></image>
+    首页
+  </navigator>
+  <navigator url="/pages/selection/selection" bindtap="selection">
+     <image src="/image/dzjx.png"></image>
+    店主精选
+  </navigator>
+  <navigator url="/pages/car/car" bindtap="car">
+     <image src="/image/car.png"></image>
+    购物车
+  </navigator>
+  <navigator url="/pages/my/my" class="cur" bindtap="my">
+     <image src="/image/my1.png"></image>
+    我的
+  </navigator>
+</view>

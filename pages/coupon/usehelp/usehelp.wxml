@@ -1,0 +1,18 @@
+<!--pages/coupon/usehelp/usehelp.wxml-->
+<view class="t" style="margin-top:30rpx">1、如何查询我的优惠券？</view>
+
+<view class="c">在微信里访问速药小程序时，点击底部导航栏我的-我的优惠券进行查询。</view>
+
+<view class="t">2、如何使用我的优惠券？</view>
+<view class="c">当您在小程序内进行购买时，在确认订单页面，系统会根据优惠券使用规则自动为您匹配可使用的优惠券，您也可以在确认订单页面选择是否使用您的优惠券；系统会根据优惠券的面额和有效期自动排序。</view>
+
+<view class="t">3、优惠券有什么使用条件吗？</view>
+<view class="c">a、每个优惠券都具有效期，需要在优惠券失效前使用，过期后的优惠券将自动失效。</view>
+<view class="c">b、订单的商品金额（不含运费）需满足优惠券的使用门槛就可以使用优惠券进行购物金额抵扣，获得购物优惠。</view>
+<view class="c">c、每个订单只能使用一张优惠券，不能叠加使用。</view>
+
+<view class="t">4、优惠券可以转让吗？</view>
+<view class="c">目前优惠券不可转让，只供获得人使用。</view>
+
+<view class="t">5、订单退款时优惠券是否可以退还？</view>
+<view class="c">使用优惠券购买商品后，如申请退货退款，订单抵扣的优惠券将不再退还。</view>

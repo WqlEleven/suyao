@@ -1,0 +1,56 @@
+<view class="tab">
+  <block wx:for="{{tabList}}" wx:key="{{index}}">
+    <view id="{{index}}" class="tabList {{activeIndex == index ? 'on' : ''}}" bindtap="tabClick">{{item.listTit}}</view>
+  </block>
+</view>
+<!-- 店主 -->
+<view class="shopkeeper {{activeIndex == 0 ? '' : 'hide'}}">
+  <!-- <image src="/image/team01.jpg" mode='widthFix' class="banner"></image> -->
+  <view class="shopkeeperList" >
+    <view class="shopkeeper-item" wx:for='{{shopkeeper.shopkeeperList}}' wx:key="shopkeeper">
+      <image src="{{item.avatar}}" class="header"></image>
+      <text>{{item.nickname}}</text>
+    </view>
+  </view>
+  <text class="totalNum block text-center">{{shopkeeper.num}}位店主</text>
+</view>
+<!-- 顾客 -->
+<view class="customer {{activeIndex == 1 ? '' : 'hide'}}">
+  <!-- <image src="/image/team02.jpg" mode='widthFix' class="banner"></image> -->
+  <view class="customerList" >
+    <view class="customer-item" wx:for='{{customer.customerList}}' wx:key="customer">
+      <image src="{{item.avatar}}" class="header"></image>
+      <text>{{item.nickname}}</text>
+    </view>
+  </view>
+  <text class="totalNum block text-center">共{{customer.num}}名</text>
+</view>
+<!-- 访客 -->
+<view class="visitor {{activeIndex == 2 ? '' : 'hide'}}">
+  <view class="visitList">
+    <view class="item" wx:for="{{visitor.visitList}}" wx:key="visit">
+      <image class="header" src="{{item.avatar}}" mode='aspectFill'></image>
+      <text>{{item.nickname}}</text>
+    </view>
+  </view>
+  <text class="totalNum block text-center">共{{visitor.personNum}}位访客</text>
+</view>
+<view class="blank"></view>
+<view class="footer">
+  <navigator url="../index/index" bindtap="home">
+     <image src="/image/home.png"></image>
+    首页
+  </navigator>
+  <navigator url="/pages/selection/selection" bindtap="selection">
+     <image src="/image/dzjx.png"></image>
+    店主精选
+  </navigator>
+  <navigator url="/pages/car/car" bindtap="car">
+     <image src="/image/car.png"></image>
+    购物车
+  </navigator>
+  <navigator url="/pages/my/my" class="cur" bindtap="my">
+     <image src="/image/my1.png"></image>
+    我的
+  </navigator>
+</view>

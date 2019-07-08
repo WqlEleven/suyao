@@ -1,0 +1,41 @@
+.code{
+  padding: 0 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom:solid 10rpx #eee;
+  font-size: 30rpx;
+}
+.uploading-image{
+    padding: 20rpx;
+    border: 1px dashed #999999;
+    width:490rpx;
+    margin: 0 auto;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+}
+.uploading-image image{
+    width:100%;
+    display:block;
+}
+.uploading-tit{
+  margin-top: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+.blank{
+  height: 100rpx;
+}
+.btn-submit{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width:100%;
+  height:90rpx;
+  font-size:32rpx;
+  text-align:center;
+  line-height:90rpx;
+  background-color:#b6002d;
+  color:#fff;
+}

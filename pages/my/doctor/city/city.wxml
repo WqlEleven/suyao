@@ -1,0 +1,5 @@
+<view class="city">
+  <block wx:for="{{cityList}}" wx:key="city">
+    <view bindtap='selectCity' class='item' id="{{item.id}}">{{item.name}}</view>
+  </block>
+</view>

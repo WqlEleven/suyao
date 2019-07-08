@@ -1,0 +1,69 @@
+<view class="index-nav">
+  <image src="/image/dzjx_bg.png" class="dzjx_bg"></image>
+  <!--navigator open-type="navigate" url="/pages/my/fenleiChoice/fenleiChoice" class="shelves">精选商品</navigator-->
+  <view class="shopkeeper">
+    <view class="shoph">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="shopmess">
+      <text class="firname">{{shoptype}}</text>
+      <text class="secname">{{userInfo.nickName}}店铺</text>
+    </view>
+  </view>
+</view>
+<view class='goodsChoice'>
+  <button type="primary" class='choice' bindtap='choiceTap'>精选商品</button>
+</view>
+<view class="goodsList" wx:if="{{goodsList.length}}">
+  <block wx:for="{{goodsList}}" wx:key="{{index}}">
+    <view class="goods overHidden {{item.status!=0 ? 'off' : ''}}" wx:if="{{item.status}}">
+      <image class="goodsPic" wx:if="{{item.picture}}" src="{{item.pictures}}"></image>
+      <image class="goodsPic" wx:else src="/image/category-img-404.png"></image>
+
+      <view class="goodsInfo">
+        <text class="goodsName">{{item.name}}</text>
+        <text class="goodsDes">{{item.effect}}</text>
+        <view>
+          <text class="goodsPrice">￥{{item.price}}</text>
+          <text class="goodsearn">赚￥{{item.money_1}}</text>
+        </view>
+        <text class="goodsNum">在售人数 {{item.sale_num}}</text>
+      </view>
+      <view class="opration" wx:if="{{item.status==0}}">
+        <view class='btn' data-datas="{{item}}" wx:if="{{item.is_choice==1}}" bindtap="setChoice">取消精选</view>
+        <view class='btn' data-datas="{{item}}" wx:else bindtap="setChoice">精选</view>
+        <view id='{{item.id}}' class='btn btn-share' bindtap='shareTap'>分享</view>
+      </view>
+      <view class="opration" wx:else>
+        <view class='btn' data-datas="{{item}}" wx:if="{{item.is_choice==1}}">取消精选</view>
+        <view class='btn' data-datas="{{item}}" wx:else>精选</view>
+        <view id='{{item.id}}' class='btn btn-share' bindtap='shareTap'>分享</view>
+      </view>
+      <image wx:if="{{item.status==3}}" class="offFlag" src='/image/off.png'></image>
+    </view>
+  </block>
+</view>
+<view class="goodsNull" wx:else>
+  <view class="goodsNullbox">
+    <text>您还没有精选商品，点击添加精选商品</text>
+  </view>
+</view>
+<view class="blank"></view>
+<view class="footer">
+  <navigator url="../index/index" bindtap="home">
+    <image src="/image/home.png"></image>
+    首页
+  </navigator>
+  <navigator url="/pages/selection/selection" bindtap="selection">
+    <image src="/image/dzjx.png"></image>
+    店主精选
+  </navigator>
+  <navigator url="/pages/car/car" bindtap="car">
+    <image src="/image/car.png"></image>
+    购物车
+  </navigator>
+  <navigator url="/pages/my/my" class="cur" bindtap="my">
+    <image src="/image/my1.png"></image>
+    我的
+  </navigator>
+</view>

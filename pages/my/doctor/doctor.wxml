@@ -1,0 +1,92 @@
+<view class="information">
+  <view class='item clearfix'>
+    <view class="label">真实姓名</view>
+    <view class='inputArea'>
+      <input type="text" value="{{name}}" bindinput="userNameInput" placeholder='请输入姓名'></input>
+    </view>
+  </view>
+  <view class='item clearfix'>
+    <view class="label">性别</view>
+    <view class='inputArea'>
+      <picker mode='selector' bindchange="bindSexPicker" value="{{sexIndex}}" range="{{sexArr}}" range-key="value">
+        <view class="picker">
+          {{sex ? sexArr[sexIndex].value : '请选择性别'}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='item clearfix'>
+    <view class="label">医院</view>
+    <navigator url='/pages/my/doctor/province/province' class='inputArea'>
+      <input disabled='true' type="text" placeholder='请选择医院' value='{{hospital[0].value}}'></input>
+    </navigator>
+  </view>
+  <view class='item clearfix'>
+    <view class="label">科室</view>
+    <navigator url='/pages/my/doctor/department/department' class='inputArea'>
+      <input disabled='true' type="text" placeholder='请选择科室' value='{{department[0].value}}'></input>
+    </navigator>
+  </view>
+  <view class='item clearfix'>
+    <view class="label">职称</view>
+    <view class='inputArea'>
+      <picker mode='selector' bindchange="bindTitlePicker" value="{{titleIndex}}" range='{{titleArr}}' range-key="value">
+        <view class="picker" id="{{sexArr[sexIndex].id}}">
+          {{title_id ? titleArr[titleIndex].value : '请选择职称'}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='item clearfix'>
+    <view class="label">出诊时间</view>
+    <navigator url='/pages/my/doctor/visitTime/visitTime' class='inputArea'>
+      <input type="text" value="{{visit_time}}" disabled='true' placeholder='请选择出诊时间'></input>
+    </navigator>
+  </view>
+  <navigator url='/pages/my/doctor/workerCard/workerCard' class='item2 clearfix'>
+    <view class="label">我的工作证
+      <text class='required'>(必填)</text>
+    </view>
+    <view class='previewPic' wx:if="{{workerCards != ''}}">
+      <image mode="aspectFill" src="{{workerCards}}"></image>
+    </view>
+  </navigator>
+  <navigator url='/pages/my/doctor/doctorLicence/doctorLicence' class='item2 clearfix'>
+    <view class="label">医师执业证
+      <text class='required'>(必填)</text>
+    </view>
+    <view class='previewPic' wx:if="{{version == 'new' && licenceImg != ''}}">
+      <image mode="aspectFill" src="{{licenceImg}}"></image>
+    </view>
+    <view class='previewPic' wx:if="{{version == 'old' && licenceImg != ''}}">
+      <image mode="aspectFill" src="{{licenceImg}}"></image>
+      <image mode="aspectFill" src="{{licenceInfoImg}}"></image>
+    </view>
+  </navigator>
+  <navigator url='/pages/my/doctor/idCard/idCard' class='item2 clearfix'>
+    <view class="label">身份证
+      <text class='required'>(必填)</text>
+    </view>
+    <view class='previewPic' wx:if="{{idCardsImg != ''}}">
+      <image mode="aspectFill" src="{{idCardsImg}}"></image>
+      <image mode="aspectFill" src="{{idCardsBackImg}}"></image>
+    </view>
+  </navigator>
+  <navigator url='/pages/my/doctor/credentials/credentials' class='item2 clearfix'>
+    <view class="label">职称证书
+      <text class='required'>(必填)</text>
+    </view>
+    <view class='previewPic' wx:if="{{credentials != ''}}">
+      <image mode="aspectFill" src="{{credentials}}"></image>
+    </view>
+  </navigator>
+  <view class='item clearfix'>
+    <view class="label">擅长</view>
+    <textarea auto-height='true' value="{{skilled}}" bindinput="skilledInput" placeholder='您的专业领域、擅长病种、研究方向等信息'></textarea>
+  </view>
+  <view class='item clearfix'>
+    <view class="label">个人简介</view>
+    <textarea auto-height='true' value="{{brief}}" bindinput="briefInput" placeholder='您的从业经历、职称、所获荣誉等信息'></textarea>
+  </view>
+</view>
+<view class='btn-submit' bindtap='submit'>提交</view>

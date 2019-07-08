@@ -1,0 +1,58 @@
+/* pages/my/gift/writeMessage/writeMessage.wxss */
+page{
+  background: #f2f2f2;
+}
+.title{
+  color: #fff;
+  font-size: 26rpx;
+  background: #c40000;
+  line-height: 60rpx;
+  padding: 10rpx 24rpx;
+}
+.item{
+  background: #fff;
+  margin-top: 10rpx;
+  padding: 10rpx 24rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  position: relative;
+}
+.import{
+  color: #c40000;
+  font-size:30rpx;
+  margin-right: 6rpx;
+}
+.item input{
+  display: block;
+  width: 400rpx;
+  float: left;
+  font-size: 28rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+}
+.submit{
+  color: #fff;
+  font-size: 26rpx;
+  background: #c40000;
+  text-align: center;
+  line-height: 82rpx;
+  border-radius: 5px;
+  margin: 180rpx auto 0;
+  width: 90%
+}
+.left{
+  width: 146rpx;
+  float: left;
+}
+.code{
+  width: 200rpx;
+  color: #fff;
+  background: #c40000;
+  font-size: 26rpx;
+  position: absolute;
+  right: 0;
+  top:0;
+  border-radius: 0;
+  line-height: 82rpx;
+}

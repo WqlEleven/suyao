@@ -1,0 +1,2 @@
+<image class="qrcode clearfix" mode="aspectFit" src="{{filePath}}"></image>
+<view class="btn-save" bindtap='chooseImage'>上传微信二维码</view>

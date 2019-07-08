@@ -1,0 +1,23 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<!-- 轮播 -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{goods.pictures}}" wx:key="slide">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="title">
+  开启速药创业之旅，赠送专享创业礼包（邀请人：{{user.nickname}}）
+  <text>￥{{goods.price}}</text>
+</view>
+<!--view class="img" >
+  <image wx:for="{{imgs}}" src="{{item.img}}"></image>
+</view-->
+<!--view class="item">{{goods.introduction}}</view-->
+<view class="wxParse">
+  <template is="wxParse" data="{{wxParseData:introduction.nodes}}" />
+</view>
+<view class="blank"></view>
+<!--navigator url="/pages/my/gift/giftOrder/giftOrder?id={{goods.id}}">立即购买</navigator-->
+<view id="{{goods.id}}" class="buy" bindtap="buyTap">立刻购买</view>

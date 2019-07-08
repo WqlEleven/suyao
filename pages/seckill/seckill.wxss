@@ -1,0 +1,127 @@
+page{
+  padding-bottom: 40rpx;
+}
+.timeSlot{
+  background-color: #c40000;
+  height: 110rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+}
+.timeSlot .item{
+  padding: 10rpx 0 20rpx;
+}
+.timeSlot .item.on{
+  background-color: #9f0000;
+}
+.timeSlot .statu{
+  line-height: 30rpx;
+  font-size: 24rpx;
+}
+
+.title{
+  padding: 20rpx;
+  line-height: 48rpx;
+  border-bottom: solid 10rpx #f2f2f2;
+  font-size: 26rpx;
+  color: #4d4c4c;
+}
+.title .leaveTime{
+  float: right;
+}
+.title .leaveTime text{
+  width: 48rpx;
+  height: 48rpx;
+  display: inline-block;
+  text-align: center;
+  line-height: 48rpx;
+  background-color: #332d24;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 6rpx;
+  margin: 0 10rpx;
+}
+.goodsItem{
+  padding: 20rpx;
+  overflow: hidden;
+  position: relative;
+  border-bottom: solid 2rpx #f2f2f2;
+}
+.goodsItem .goodsPic{
+  width: 160rpx;
+  height: 160rpx;
+  float: left;
+}
+.goodsItem .goodsPic image{
+  width: 140rpx;
+  height: 140rpx;
+  margin: 10rpx;
+}
+.goodsItem .basicInfo{
+  width: 530rpx;
+  padding-left: 20rpx;
+  float: left;
+}
+.goodsItem .name{
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #111;
+}
+.goodsItem .desc{
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.goodsItem .price{
+  padding: 10rpx 0;
+  font-size: 36rpx;
+  color: #c40000;
+}
+.goodsItem .price::before{
+  content: '￥';
+  font-size: 24rpx;
+}
+.goodsItem .price text{
+  padding-left: 10rpx;
+  font-size: 24rpx;
+  text-decoration: line-through;
+  color: #999;
+}
+.goodsItem .progress{
+  width: 250rpx;
+  height: 20rpx;
+  background-color: #e28282;
+  border:solid 2rpx #c40000;
+  border-radius: 20rpx;
+  overflow: hidden;
+  position: relative;
+}
+.goodsItem .progress .text{
+  position: absolute;
+  text-align: center;
+  line-height: 20rpx;
+  font-size: 18rpx;
+  color: #fff;
+  width: 100%;
+  top:0;
+  left: 0;
+}
+.goodsItem .inner{
+  width: 30%;
+  height: 20rpx;
+  background-color: #c40000;
+}
+.buy{
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  width: 200rpx;
+  height: 60rpx;
+  background-color: #c40000;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 6rpx;
+}

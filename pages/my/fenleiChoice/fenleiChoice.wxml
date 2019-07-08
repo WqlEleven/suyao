@@ -1,0 +1,35 @@
+<navigator url="/pages/my/myShopManage/myShopManage" class="search">
+   <input placeholder="请输入药品名称、品牌或症状" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}" />
+   <image src="/image/search.png" class="btn-search" bindtap=""></image>
+</navigator>
+<view class="container">
+   <scroll-view scroll-y style="height:1070rpx" class="nav-left">
+      <view>
+         <block wx:for="{{navLeftItems}}" wx:key="c">
+            <view class="nav-left-items {{curNav == item.id ? 'active' : ''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchRightTab">
+               <text class="cicle"></text>{{item.name}}
+               <image src="{{item.src}}" class="arrow"></image>
+            </view>
+         </block>
+      </view>
+   </scroll-view>
+   <scroll-view scroll-y style="height:1070rpx" class="nav_rightbox">
+      <view class="nav_right" wx:if="{{hasgoods}}">
+         <block wx:for="{{navRightItems}}" wx:key="c">
+            <view class="nav_right_items" wx:if="{{item.product_num > 0}}">
+               <view id="{{item.id}}" bindtap="seachGoods">
+                  <view>
+                     <image wx:if="{{item.picture}}" src="{{item.pictures}}"></image>
+                     <image wx:else src="/image/category-img-404.png"></image>
+                  </view>
+                  <view>
+                     <text>{{item.name}}</text>
+                  </view>
+               </view>
+            </view>
+         </block>
+      </view>
+      <view wx:if="{{!hasgoods}}" class="nogoods">暂无数据</view>
+   </scroll-view>
+
+</view>

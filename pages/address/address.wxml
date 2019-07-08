@@ -1,0 +1,68 @@
+<view>
+  <view class="form-list">
+    <view class="form-item">
+      <view class="form-item-hd">收件人：</view>
+      <view class="form-item-bd">
+        <input type="text" bindinput="userNameInput" placeholder-class="input-placeholder" name="name" value="{{name}}" placeholder="请输入姓名" />
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-item-hd">联系方式：</view>
+      <view class="form-item-bd">
+        <input type="number" bindinput="telInput" placeholder-class="input-placeholder" name="tel" value="{{tel}}" placeholder="请输入手机号码" maxlength="11" />
+      </view>
+    </view>
+    <view class="form-item" wx:if="{{canIUseRegion}}">
+      <view class="form-item-hd">地区：</view>
+      <view class="form-item-bd">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <view class="picker input {{!region[0] ? 'input-placeholder' : ''}}">
+            <block wx:if="{{region[0]}}">{{region[0]}} {{region[1]}} {{region[2]}}</block>
+            <block wx:else>请选择所在地区</block>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form-item" wx:else>
+      <view class="form-item-hd">地区：</view>
+      <view class="form-item-bd" bindtap="showDistpicker">
+        <view class="input {{!provinceName[provinceSelIndex] ? 'input-placeholder' : ''}}">
+          <block wx:if="{{provinceName[provinceSelIndex]}}">{{provinceName[provinceSelIndex]}} {{cityName[citySelIndex]}} {{districtName[districtSelIndex]}}</block>
+          <block wx:else>请选择所在地区</block>
+        </view>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-item-hd">详细地址：</view>
+      <view class="form-item-bd">
+        <input type="text" bindinput="addressInput" placeholder-class="input-placeholder" name="address" value="{{address}}" placeholder="详细地址需填写楼栋楼层或房间号信息" maxlength="50" />
+      </view>
+    </view>
+    <view class="form-item setDefault">
+      <view class="form-item-hd">设为默认地址</view>
+      <view class="form-item-bd">
+        <switch color="#b6002d" bindchange="switchChange" />
+      </view>
+    </view>
+  </view>
+  <button bindtap="savePersonInfo" class="save-btn">确认保存</button>
+</view>
+<view class="distpicker {{showDistpicker ? '' : 'hidden'}}">
+  <view class="distpicker-btn">
+    <view class="distpicker-cancel-btn" bindtap="distpickerCancel">取消</view>
+    <view class="distpicker-sure-btn" bindtap="distpickerSure">确定</view>
+  </view>
+  <picker-view indicator-style="height: 40px;" class="distpicker-content" value="{{value}}" bindchange="changeArea">
+    <picker-view-column>
+      <view wx:for="{{provinceName}}" wx:key="province" class="area-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{cityName}}" wx:key="city" class="area-item">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{districtName}}" wx:key="district" class="area-item">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+<view class="mask" catchtap="distpickerCancel" hidden="{{!showDistpicker}}"></view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

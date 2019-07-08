@@ -1,0 +1,37 @@
+/**app.wxss**/
+
+page {
+  font-family: 'Microsoft Yahei';
+  font-size: 26rpx;
+  color: #666;
+  line-height: 150%;
+}
+
+input {
+  font-family: 'Microsoft Yahei';
+}
+
+.clearfix {
+  clear: both;
+}
+
+.overHidden {
+  overflow: hidden;
+}
+
+.right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.block {
+  display: block;
+}
+

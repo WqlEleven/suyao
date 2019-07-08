@@ -1,0 +1,22 @@
+/* pages/my/visit/visitDetail.wxss */
+page{
+  background-color: #f2f2f2;
+  font-size: 26rpx;
+  color: #424242;
+}
+.customerList{
+  margin: 10rpx 0;
+}
+.customer-item{
+  background-color: #fff;
+  padding: 12rpx 55rpx;
+  margin-top: 5rpx;
+}
+.header{
+  width: 106rpx;
+  height: 106rpx;
+  margin-right: 16rpx;
+  border: solid 6rpx #e6e6e6;
+  border-radius: 100%;
+  vertical-align: middle;
+}

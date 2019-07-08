@@ -1,0 +1,161 @@
+<view class="index-nav">
+  <image src="/image/dzjx_bg.png" class="dzjx_bg"></image>
+  <view class="shares" bindtap="shareShow">
+    <image src="/image/btn_share.png" class="btn_share"></image>
+  </view>
+  <view class="shopkeeper">
+    <view class="shoph">
+      <!--image src="{{userInfo.avatarUrl}}"></image-->
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="shopmess">
+      <text class="firname">{{shoptype}}</text>
+      <!--text class="secname">{{userInfo.nickName}}(UID:{{user.id}})</text-->
+      <open-data type="userNickName"></open-data>(UID:{{user.id}})
+    </view>
+  </view>
+  <view class="usertype" wx:if="{{user.level_id == 0}}">访客</view>
+  <view class="usertype" wx:elif="{{user.level_id == 1}}">顾客</view>
+  <view class="usertype" wx:elif="{{user.level_id == 2}}">店主</view>
+  <view class="usertype" wx:elif="{{user.level_id == 3}}">精英店主</view>
+  <view class="usertype" wx:elif="{{user.level_id == 4}}">总监</view>
+  <view class="usertype" wx:elif="{{user.level_id == 5}}">总裁</view>
+  <view class="usertype" wx:elif="{{user.level_id == 6}}">股东</view>
+  <view class="usertype" wx:else>未知</view>
+</view>
+
+<navigator url="/pages/my/pickup/pickup" class="wode_item wode_money" wx:if="{{shopholder}}">
+  可用余额：{{available}}元
+  <text class="green">提现</text>
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</navigator>
+
+<view class="income" wx:if="{{userLevel}}">
+  <view class="item">
+    <text class="tit">待收收益</text>
+    <text class="order-item">￥{{received}}元</text>
+  </view>
+  <navigator class="item" url="/pages/my/profit/profit">
+    <text class="tit">累计收益</text>
+    <text class="order-item">￥{{gain}}元</text>
+  </navigator>
+  <navigator class="item" url="/pages/my/currency/currency">
+    <text class="tit">我的健康币</text>
+    <text class="order-item">￥{{currency}}个</text>
+  </navigator>
+</view>
+
+<view class="myorder">
+  <navigator url="/pages/my/order/order" class="tit">
+    <image src="/image/icon_03.png" class="icon"></image>
+    我的订单
+    <text class="right">全部订单</text>
+    <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+  </navigator>
+</view>
+<!-- 我的套餐订单 -->
+<view class="myorder">
+  <navigator url="/pages/my/gift/giftOrderList/giftOrderList" class="tit">
+    <image src="/image/icon_06.png" class="icon"></image>
+    我的套餐订单
+    <text class="right">全部订单</text>
+    <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+  </navigator>
+</view>
+
+<!-- 管理货架  -->
+<view wx:if="{{userLevel}}" class="wode_item" bindtap="shelfManagement">
+  <image src="/image/icon_05.png" class="icon"></image>
+  精选商品
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<view wx:if="{{userLevel}}" class="wode_item" bindtap="prescriptTap">
+  <image src="/image/icon_05.png" class="icon"></image>
+  我的商品套餐
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<view wx:if="{{userLevel}}" class="wode_item" bindtap="myTeam">
+  <image src="/image/icon_08.png" class="icon"></image>
+  我的团队
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<view wx:if="{{userLevel}}" class="wode_item" bindtap="makeOwner">
+  <image src="/image/icon_10.png" class="icon"></image>
+  发展店主
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<view wx:if="{{userLevel}}" class="wode_item" bindtap="myTeacher">
+  <image src="/image/icon_07.png" class="icon"></image>
+  我的培训老师
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+
+<view class="wode_item" bindtap="myCoupon">
+  <image src="/image/icon_12.png" class="icon"></image>
+  我的优惠券
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<!--view class="wode_item" bindtap="customerService">客户服务
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view-->
+<!--contact-button session-from="my"></contact-button-->
+<view class="wode_item">
+  <image src="/image/icon_11.png" class="icon"></image>
+  <button open-type="contact">
+    客户服务
+  </button>
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<view class="wode_item" bindtap="addressManage">
+  <image src="/image/icon_09.png" class="icon"></image>
+  地址管理
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<view class="wode_item" bindtap="myQrcode">
+  <image src="/image/icon_13.png" class="icon"></image>
+  我的微信二维码
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<view class="wode_item" bindtap="materialTraining">
+  <image src="/image/icon_14.png" class="icon"></image>
+  培训资料
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<view class="wode_item" bindtap="examTraining">
+  <image src="/image/icon_15.png" class="icon"></image>
+  考试培训
+  <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+</view>
+<!-- 医师板块 -->
+<view class="wode_item">
+  <view class="tit" bindtap="doctorTap">
+    <image src="/image/icon_06.png" class="icon"></image>
+    医师登记
+    <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+  </view>
+</view>
+<view class="wode_item" wx:if="{{user.is_doctor == 1}}">
+  <navigator url="/pages/my/fenleiChoice/fenleiChoice" class="tit">
+    <image src="/image/icon_06.png" class="icon"></image>
+    医师用药专柜
+    <image class="arrow_wrap" src="/image/icon-arrow.png"></image>
+  </navigator>
+</view>
+<!-- 分享弹窗 -->
+<view class="shareBox" wx:if="{{shareBtn}}">
+  <view class="blankShare" catchtap="closeShare"></view>
+  <view class="win_share">
+    <view class="share1">
+
+      <!-- <text>分享给好友</text> -->
+      <button open-type="share">
+        <image src="/image/btn_wx.png"></image>
+        <text>分享给好友</text>
+      </button>
+    </view>
+    <view class="share1" catchtap="saveCode">
+      <image src="/image/btn_er.png"></image>
+      <text>保存二维码</text>
+    </view>
+  </view>
+</view>

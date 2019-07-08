@@ -1,0 +1,166 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="tab">
+  <view data-index="0" bindtap='tabclick' class="item {{isgoods == '0'? 'on' :''}}">商品</view>
+  <view data-index="1" bindtap='tabclick' class="item {{isgoods == '1'? 'on' :''}}">素材</view>
+</view>
+<view wx:if="{{isgoods == 0}}">
+  <scroll-view scroll-Y="true" scroll-X="false">
+    <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" duration="{{duration}}">
+      <block wx:for="{{goods.pictures}}" wx:key="detail">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="shares" bindtap="shareShow">
+      <image src="/image/btn_share.png" class="btn_share"></image>
+    </view>
+    <view class="video" wx:if="{{goods.video != ''}}">
+      <video id="video" src="{{goods.video}}"></video>
+    </view>
+    <view class="title">
+      <text class="type">特卖</text>
+      <text class="type typedis">Rx</text>
+      <text>{{goods.name}}</text>
+      <text class="des">{{goods.effect}}</text>
+    </view>
+    <view class="mess">{{goods.model}}</view>
+    <view class="price">
+      <text>￥</text>{{goods.price}}
+    </view>
+  </scroll-view>
+  <!--view>
+    <text>scene：{{scene}}，</text>
+    <text>scene_id：{{scene_id}}，</text>
+    <text>split：{{split_sid}}-{{split_pid}}，</text>
+    <text wx:if="{{pid > 0}}">sid：{{sid}}，pid：{{pid}}-{{parent.nickname}}，</text>
+  </view-->
+  <!-- 规格 -->
+  <view class="hint">本品为处方药，需要凭医生处方购买和使用，为了您的用药安全请点击“药师咨询”进行在线咨询或致电4007089000，我们将有专业药师为您服务。</view>
+  <view class="size" bindtap="selectspecy">
+    <text>库存：{{goods.stock}}，</text>
+    <text>{{regular}}</text>
+    <image src="/image/icon-arrow.png" class="select"></image>
+  </view>
+  <!-- 商品介绍 -->
+  <view class="pru-tab">
+    <text class=" {{pruTap===0?'active':''}}" bindtap="bindTap" data-index="0">商品介绍</text>
+    <text class="{{pruTap===1?'active':''}}" bindtap="bindTap" data-index="1">产品说明书</text>
+  </view>
+  <view class="pru-tab-mess">
+    <view wx:if="{{pruTap === 0}}">
+      <!--view class="item"  wx:key="{{index}}">{{goods.introduction}}</view-->
+      <view class="wxParse">
+        <template is="wxParse" data="{{wxParseData:introduction.nodes}}" />
+      </view>
+    </view>
+    <!--view class="item" wx:else="{{pruTap === 1}}">{{goods.manual}}</view-->
+    <view class="wxParse" wx:else="{{pruTap === 1}}">
+      <template is="wxParse" data="{{wxParseData:manual.nodes}}" />
+    </view>
+  </view>
+</view>
+<view class="material" wx:if="{{isgoods == 1}}" wx:for-index="par_index">
+  <block wx:if="{{material.length > 0}}">
+    <view wx:for="{{material}}" wx:key="material" class="item">
+      <view class="title">
+        <image mode="widthFix" src="{{item.avatar}}"></image> {{item.nickname}}</view>
+      <view class="con">{{item.content}}</view>
+      <view class="img_box">
+        <image wx:for="{{item.images}}" data-index="{{par_index}}" data-src="{{image}}" bindtap='clickImage' wx:key="image" wx:for-item="image" mode="aspectFill" src="{{image}}"></image>
+      </view>
+      <view class="bottom_clear">
+        <view class="fl">{{item.add_time}}</view>
+        <view class="fr" bindtap="saveImageTap" data-images="{{item.images}}">
+          <image src="/image/download.png"></image>保存图片
+        </view>
+        <view class="fr" bindtap="copyContentTap" data-data="{{item.content}}">
+          <image src="/image/download.png"></image>复制内容
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="item no-item">暂无素材</view>
+  </block>
+  <block wx:if="{{userInfo.level_id >= 2}}">
+    <view class="pos_bottom">
+      <!--image class="fl" mode="widthFix" src="/image/banner.png"></image-->
+      <navigator url="/pages/publishedmaterial/publishedmaterial?id={{id}}">
+        <view class="fr">
+          <image src="/image/download1.png"></image>发布素材</view>
+      </navigator>
+    </view>
+    <view class="blank"></view>
+  </block>
+</view>
+<view class="blank"></view>
+<view class="footer">
+  <navigator class="home" url="/pages/index/index" open-type="switchTab">
+    <image src="/image/home.png"></image>
+    <text>首页</text>
+  </navigator>
+  <navigator class="home" url="/pages/recipecar/recipecar">
+    <image src="/image/car.png"></image>
+    <text>需求单</text>
+  </navigator>
+  <view class="home">
+    <image src="/image/icon-kf.png"></image>
+    <!--text>客服</text-->
+    <!--contact-button session-from="detail"></contact-button-->
+    <button open-type="contact">客服</button>
+  </view>
+  <text class="addcar" bindtap="selectspecy">加入需求单</text>
+  <text class="buynow" bindtap="selectspecy">提交需求</text>
+</view>
+<view class="proBg {{showSpecy?'hide':''}}">
+  <view class="pro-box">
+    <image src="/image/close.png" class="close" bindtap="close"></image>
+    <view class="pro-buy">
+      <view class="pro-mess">
+        <view class="img">
+          <image src="{{goods.picture}}"></image>
+        </view>
+        <view class="pro-ses">
+          <text class="name">{{goods.name}}</text>
+          <text class="des">{{goods.describe}}</text>
+          <text class="price">￥{{goods.price}}</text>
+        </view>
+      </view>
+      <view class="specy">
+        <text>规格：</text>
+        <text wx:for="{{goods.models}}" wx:key="model" data-index="{{index}}" id="{{item.id}}" class="item {{item.id===current?'active':''}}" bindtap="sltSpe">{{item.model}}</text>
+      </view>
+      <view class="number">
+        数量：
+        <text id="reduce" bindtap="{{num>1?'reduce':1}}">-</text>
+        <text class="num">{{num}}</text>
+        <text id="add" bindtap="add">+</text>
+      </view>
+    </view>
+    <view class="buycar" bindtap="addcars">加入需求单</view>
+    <view class="buy" bindtap="buyNow">提交需求</view>
+  </view>
+</view>
+<!-- 分享弹窗 -->
+<view class="shareBox" wx:if="{{shareBtn}}">
+  <view class="blankShare" catchtap="closeShare"></view>
+  <view class="win_share">
+    <view class="share1">
+
+      <!--text>分享给好友</text-->
+      <button open-type="share">
+        <image src="/image/btn_wx.png"></image>
+        <text>分享给好友</text>
+      </button>
+    </view>
+    <view class="share1" catchtap="savePageCode">
+      <image src="/image/btn_save.png"></image>
+      <text>保存页面二维码</text>
+    </view>
+    <view class="share1" catchtap="saveCode">
+      <image src="/image/btn_er.png"></image>
+      <text>保存二维码</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<view class="main">
+  <view wx:if="{{hasList}}">
+    <view class="cart-box" wx:key="{{index}}">
+      <view class="cart-list" wx:for="{{carts}}" id="{{item.id}}" wx:key="{{index}}">
+        <view class="cart-list-con" style="{{item.txtStyle}}" data-index="{{index}}">
+          <icon wx:if="{{item.is_check==1}}" type="success" color="#c40000" data-index="{{index}}" class="cart-pro-select" bindtap="selectList" />
+          <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList" />
+          <navigator url="../recipegoodsDetail/recipegoodsDetail?id={{item.gid}}">
+            <image class="cart-thumb" src="{{item.picture}}"></image>
+          </navigator>
+          <view class="cart-pro-name">{{item.name}}</view>
+          <view class="cart-pro-des">{{item.model}}×{{item.num}}</view>
+          <view class="clearfix">
+            <view class="fl cart-pro-price">￥{{item.price}}</view>
+            <view class="fr cart-pro-stock">库存：{{item.stock}}</view>
+          </view>
+          <view class="prescription">
+            <text wx:if="{{item.is_rx == 1}}">Rx</text>
+          </view>
+
+          <view class="cart-count-box">
+            <text class="cart-count-down" bindtap="minusCount" data-gid="{{item.gid}}" id="{{item.id}}" data-index="{{index}}">-</text>
+            <text class="cart-count-num">{{item.num}}</text>
+            <text class="cart-count-add" bindtap="addCount" data-gid="{{item.gid}}" id="{{item.id}}" data-index="{{index}}">+</text>
+          </view>
+        </view>
+        <view class="cart-del" bindtap="deleteList" id="{{item.id}}" data-index="{{index}}">
+          <image src="/image/delate.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="blank"></view>
+    <view class="cart-footer">
+      <icon wx:if="{{selectAllStatus}}" type="success_circle" color="#c40000" class="total-select" bindtap="selectAll" />
+      <icon wx:else type="circle" color="#990026" class="total-select" bindtap="selectAll" />
+      <!-- <navigator url="../orders/orders"> -->
+      <view class="order-icon" bindtap="submitCart">结算</view>
+      <!-- </navigator> -->
+      <text class="cart-toatl-price dis">全选</text>
+      <text class="cart-toatl-price">合计：￥{{totalPrice}}</text>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="cart-no-data">购物车是空的哦~</view>
+  </view>
+</view>

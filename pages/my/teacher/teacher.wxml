@@ -1,0 +1,3 @@
+<navigator open-type="redirect" url="/pages/my/teacher/help/help" class="btn-help right"> 帮助</navigator>
+<image class="qrcode clearfix" mode="widthFix" src="{{filePath}}"></image>
+<view class="btn-save" bindtap='download'> 保存二维码到相册</view>

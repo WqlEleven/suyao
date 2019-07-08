@@ -1,0 +1,22 @@
+<view class="selectedCity">{{selectProvinceName}} {{selectCityName}}</view>
+
+<view class='county'>
+  <view bindtap='changeCounty' class='item {{activeIndex == 0 ? "active" : ""}}' data-id='0'>全部</view>
+  <block wx:for="{{countyList}}" wx:key="{{index}}">
+    <view bindtap='changeCounty' class='item {{activeIndex == index+1 ? "active" : ""}}' data-id='{{index+1}}' id="{{item.id}}">{{item.name}}</view>
+  </block>
+</view>
+
+<view class='hospitalList'>
+  <block wx:for="{{hospitalList}}" wx:key="{{hospital}}" wx:if="{{hospitalList.length > 0}}">
+    <view bindtap='selectHospital' class='item' id="{{item.id}}" data-name='{{item.name}}'>{{item.name}}</view>
+  </block>
+  
+  <view class="nodata" wx:if="{{hospitalList.length == 0}}">暂无医院数据</view>
+  <!-- 添加医院 -->
+  <view class="hospitalAdd">
+    <view class="tip">没有我要找的医院，添加医院名称</view>
+    <input placeholder='请输入医院名称' bindinput="hospital_name" value="{{hospital_name}}"/>
+    <button class="submit" bindtap='add_hospital'>确定</button>
+  </view>
+</view>

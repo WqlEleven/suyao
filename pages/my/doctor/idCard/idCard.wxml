@@ -1,0 +1,13 @@
+<input class='code' bindinput="idcardInput" type='idcard' placeholder='请输入身份证号' value="{{idcard}}"></input>
+
+<view class="uploading-tit">身份证正面清晰可见</view>
+<view class="uploading-image" bindtap='chooseImage'>
+  <image src="{{image}}" mode='widthFix'></image>
+</view>
+
+<view class="uploading-tit">身份证背面清晰可见</view>
+<view class="uploading-image" bindtap='chooseBackImage'>
+  <image src="{{backimage}}" mode='widthFix'></image>
+</view>
+<view class='blank'></view>
+<view class="btn-submit" bindtap='setImg'>确认</view>

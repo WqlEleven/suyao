@@ -1,0 +1,53 @@
+<view class="exam">
+  <view class="title">
+    <image src="/image/icon_exam.png"></image>{{paperInfo.name}} (满分{{paperInfo.score}}分)</view>
+  <view class="item" wx:for="{{questionList}}" wx:key="questionList" wx:for-index="parentIndex">
+    <view class="list_title">{{parentIndex + 1}}. {{item.name}}
+      <text>{{item.type == 1 ? '(单选)' : '(多选)'}}</text>
+    </view>
+    <view class="answer">
+      <view wx:for="{{item.option_list}}" wx:key="option_list" wx:for-item="option" data-typeCode="{{item.type}}" bindtap='optionclick' class="list {{option.isCheck == true ? 'on' : ''}}" data-index="{{index}}" data-parentindex="{{parentIndex}}">
+        <text>{{option.key}}</text>{{option.value}}</view>
+    </view>
+  </view>
+  <view class="bottom_bank"></view>
+  <view class="bottom">
+    <view class="fl">
+      <text>剩余时间</text>
+      <text class="time">{{countdown}}</text>
+    </view>
+    <button bindtap='opengrade' class="fr">交卷</button>
+  </view>
+  <view wx:if="{{isgrade}}" class="opa"></view>
+  <view wx:if="{{isgrade}}" class="grade">
+    <image class="close" bindtap='closegrade' src="/image/close-fff.png"></image>
+    <image class="success" mode='widthFix' src="/image/success.png"></image>
+    <view class="gradetitle">{{paperInfo.name}}</view>
+    <view class="score">
+      <text>{{score}}</text>分</view>
+    <view class="score-list">
+      <view class="score_item">
+        <view class="tit">最高分</view>
+        <view>
+          <text>{{topscore}}</text>分</view>
+      </view>
+      <view class="score_item">
+        <view class="tit">平均分</view>
+        <view>
+          <text>{{averagescore}}</text>分</view>
+      </view>
+      <view class="score_item">
+        <view class="tit">错题总数</view>
+        <view>
+          <text>{{wrongnumber}}</text>题</view>
+      </view>
+    </view>
+    <view class="fixed" wx:if="{{paperInfo.reward_score > 0}}">
+      <text>奖励分数线{{paperInfo.reward_score}}分，</text>
+      <text>本次得分{{score}}分，</text>
+      <text wx:if="{{paperInfo.reward_currency > 0}}">，获取健康币{{paperInfo.reward_currency}}个</text>
+      <text wx:if="{{paperInfo.reward_money > 0}}">，获得奖励金{{paperInfo.reward_money}}元</text>
+    </view>
+    <button class="button" bindtap="viewTap">查看解析</button>
+  </view>
+</view>

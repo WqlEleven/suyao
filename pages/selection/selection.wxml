@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="index-nav">
+   <image src="/image/dzjx_bg.png" class="dzjx_bg"></image>
+   <view class="shopkeeper">
+      <view class="shoph">
+         <image src="{{shopkeeperInfo.avatar}}"></image>
+      </view>
+      <view class="shopmess">
+         <view class="firname">{{shoptype}}</view>
+         <view class="secname">{{shopkeeperInfo.nickname}}的店铺</view>
+      </view>
+   </view>
+</view>
+<!-- 立即抢购 -->
+<view wx:if="{{productList.length}}">
+   <block wx:for="{{productList}}" wx:key="{{index}}">
+      <view class="now-go">
+         <navigator url="{{item.is_rx == 1 ? '/pages/recipegoodsDetail/recipegoodsDetail' : '/pages/goodsDetail/goodsDetail'}}?id={{item.id}}">
+            <image src="{{item.pictures}}"></image>
+            <view class="mess">
+               <text wx:if="{{item.is_hot==1}}" class="spacial">特卖</text>
+               <text wx:if="{{item.is_rx == 1}}" class="spacialdis">Rx</text>
+               <text class="tit">{{item.name}}</text>
+               <view class="mess-price">
+                  <text class="price"><text>￥</text>{{item.price}}</text>
+                  <text class="stock">库存：{{item.stock}}</text>
+                  <text class="btn">立即抢购</text>
+               </view>
+            </view>
+         </navigator>
+      </view>
+   </block>
+</view>
+<view class="product-null" wx:else>您的店主还没有精选商品</view>

@@ -1,0 +1,33 @@
+<view class="administration">
+   <view class="title">
+      <image src="/image/icon-white-addr.png" mode="widthFix"></image>收货地址</view>
+   <view wx:if="{{show}}">
+      <view wx:for="{{addrList}}" wx:key="address">
+         <view class="administration_con" id="{{item.id}}" catchtap="checkAddress">
+            <view class="list1">
+               <view>{{item.name}}</view>
+               <view>{{item.mobile}}</view>
+            </view>
+            <view class="list2">{{item.province}}{{item.city}}{{item.country}}{{item.address}}</view>
+            <view class="list3">
+               <view class="float">
+                  <image src="/image/shdz_sc.png" mode="widthFix"></image>
+                  <view class="classname" id="{{item.id}}" catchtap="delAddress">删除</view>
+               </view>
+               <view class="float">
+                  <view style="display:flex;" catchtap='toEdit' id="{{item.id}}">
+                     <image src="/image/shdz_bj.png" mode="widthFix"></image>
+                     <view class="classname" data-id="{{item.id}}">编辑</view>
+                  </view>
+               </view>
+            </view>
+         </view>
+      </view>
+   </view>
+   <view wx:else class="noAddmanegr">没有收获地址，请点击按钮去添加新地址</view>
+   <navigator url="../address/address">
+      <view formType="submit" class="save-btn">
+         <image src="/image/tianjia.png" mode="widthFix"></image><text>  添加新地址</text>
+      </view>
+   </navigator>
+</view>

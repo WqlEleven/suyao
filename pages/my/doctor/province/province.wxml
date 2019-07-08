@@ -1,0 +1,5 @@
+<view class="province">
+  <block wx:for="{{provinceList}}" wx:key="province">
+    <view bindtap='selectProvince' class='item' id="{{item.id}}">{{item.name}}</view>
+  </block>
+</view>

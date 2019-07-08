@@ -1,0 +1,111 @@
+<view wx:if="{{address.id}}" class="defaultAddress item" bindtap="toAddress">
+  <view class="user">
+    <text class="name">{{address.name}}</text>
+    <text class="tel">{{address.mobile}}</text>
+  </view>
+  <view class="ress">{{address.province}}{{address.city}}{{address.country}}{{address.address}}</view>
+</view>
+
+<!--默认地址-->
+<view wx:else class="toAddress item" bindtap="toAddress">
+  <text>请填写地址</text>
+  <image src="/image/icon-arrow.png" class="arrow_wrap"></image>
+</view>
+
+<!--商品列表-->
+<view class="item">
+  <view class="goodsTotalNum text-right">共计{{goodsNum}}件商品</view>
+  <view class="goodsList" wx:for="{{goods}}" wx:key="{{index}}">
+    <view class="goods">
+      <image class="goodsPic" src="{{item.picture}}"></image>
+      <view class="goodsInfo">
+        <text class="goodsName">{{item.name}} <text class="type_rx">Rx</text></text>
+        <text class="goodsDes">{{item.effect}}</text>
+        <text class="goodsSpec">{{item.model}}</text>
+      </view>
+      <view class="PriceNum">
+        <text class="goodsPrice" data-index="{{index}}">￥{{item.price}}</text>
+        <text class="goodsNum" data-index="{{index}}">×{{item.num}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="notice">配送方式</view>
+  <view class="distribution">
+    <view data-index="1" class="fl {{distribution == 1? 'on' :''}}" bindtap='choosedistribution'>
+      <view class="title1">极速送药</view>
+      <view class="title2">凡是国泰直营店10公里以内的用户门店有货可,24小时内送达。</view>
+      <view class="title3">服务时间:09:00-21:00</view>
+    </view>
+    <view data-index="2" class="fr {{distribution == 2? 'on' :''}}" bindtap='choosedistribution'>
+      <view class="title1">门店自提（免运费）</view>
+      <view class="title3">服务时间:09:00-20:00</view>
+    </view>
+  </view>
+  <view class="notice">点击'+'上传处方图片</view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files">
+            <block wx:key="imageList" wx:for-index="idx" data-src="{{imageList}}" wx:if="{{isImageList}}" bindtap="chooseImage">
+              <view class="weui-uploader__file">
+                <image class="weui-uploader__img" src="{{imageList}}" data-src="{{imageList}}" bindtap="chooseImage"></image>
+                <!-- <view class="imgClear" data-id="{{idx}}" bindtap="clearImg">×</view> -->
+              </view>
+            </block>
+            <view class="weui-uploader__input-box" wx:else>
+              添加图片
+              <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="site" wx:if="{{distribution == 2}}">
+    <view class="notice">请选择门店</view>
+    <view wx:for="{{sitelist}}" wx:key="sitelist" bindtap='clicksitelist' id='{{item.id}}' data-index="{{index}}" class="item {{item.isCheck == true ? 'on' : ''}}">
+      <text class="date">{{item.name}}</text>
+      <text class="num">{{item.phone}}</text>
+    </view>
+  </view>
+  <view class="notice">备注</view>
+</view>
+<!-- 健康币 -->
+<view class="item ticket">
+  <picker bindchange="bindPickerChange" value="{{currencyIndex}}" range="{{currency}}">
+    <view class="picker">
+      选择健康币：{{currency[currencyIndex]}}
+    </view>
+  </picker>
+</view>
+<!--优惠券-->
+<view class="item ticket">
+  <!--navigator url="/pages/coupon/coupon?title=coupon" class="slecthb">选择优惠券</navigator>
+  <view class="arrow_wrap"></view-->
+  <picker bindchange="bindPickerChangeCoupon" value="{{couponIndex}}" range="{{coupon}}" range-key="names">
+    <view class="picker">
+      选择优惠券：{{coupon[couponIndex].names}}
+    </view>
+  </picker>
+</view>
+<!--金额明细-->
+<view class="item priceDetail">
+  <view class="text">金额：¥{{money}}</view>
+  <view class="text">运费：¥{{freight}}</view>
+  <view class="text">优惠：¥{{discount}}</view>
+  <view class="text">实付：
+    <text>¥{{total}}</text>
+  </view>
+</view>
+<view class="blank"></view>
+<!--结算-->
+<view class="footer">
+  <view class="left">
+    <text class="p">合计金额：</text>
+    <text class="span">¥{{total}}</text>
+  </view>
+  <view class="right">
+    <button bindtap="settlement">提交需求</button>
+  </view>
+</view>

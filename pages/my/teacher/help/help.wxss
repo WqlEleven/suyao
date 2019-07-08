@@ -1,0 +1,34 @@
+/* pages/my/teacher/help/help.wxss */
+
+.help image{
+  display: block;
+  width: 750rpx;
+}
+
+.footer{
+  background:#f9f9f9;
+  color:#a9b7b7;
+  font-size: 24rpx;
+  text-align: center;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  padding: 10rpx 0 5rpx;
+}
+.footer navigator{
+  display: inline-block;
+  width: 25%;
+}
+.footer navigator image{
+
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin: 0 auto 8rpx;
+}
+.footer .cur{
+  color: #1b1b1b
+}
+.blank{
+  height: 97rpx
+}

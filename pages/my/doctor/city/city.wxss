@@ -1,0 +1,7 @@
+.item{
+  padding: 0 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom:solid 1px #eee;
+  font-size: 28rpx;
+}

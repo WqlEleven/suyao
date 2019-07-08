@@ -1,0 +1,6 @@
+<view class="uploading-tit">请上传清晰的工作证照片</view>
+<view class="uploading-image" bindtap='chooseImage'>
+  <image src="{{workerImg}}" mode='widthFix'></image>
+</view>
+<view class='blank'></view>
+<view class="btn-submit" bindtap='setImg'>确认</view>

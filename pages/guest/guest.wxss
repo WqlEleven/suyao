@@ -1,0 +1,16 @@
+/* pages/guest/guest.wxss */
+.tip{
+  text-align: center;
+  font-size: 28rpx;
+  padding: 80rpx 0;
+  color: #888;
+}
+.contact{
+  background: #c40000;
+  color: #fff;
+  line-height: 78rpx;
+  text-align: center;
+  width: 300rpx;
+  border-radius: 5px;
+  margin: 0 auto;
+}

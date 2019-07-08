@@ -1,0 +1,9 @@
+<block wx:for='{{profitList}}' wx:key="month">
+  <view class="item month">{{item.month}}月</view>
+  <view class="item" wx:for="{{item.list}}" wx:for-item='list' wx:key="income">
+    <text class="profitDes">{{list.content}}</text>
+    <text>订单编号：{{list.order_no}}</text>
+    <text>{{list.add_time}}</text>
+    <text class="red profit">+{{list.money}}</text>
+  </view>
+</block>

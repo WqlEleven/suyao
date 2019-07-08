@@ -1,0 +1,31 @@
+<!--pages/my/gift/writeMessage/writeMessage.wxml-->
+<view class="title">请填写真实姓名和您的手机号，否则将会影响您的资金提交</view>
+<view class="item">
+  <view class="left">
+    <text class="import">*</text>真实姓名
+  </view>
+  <input type="text" bindinput="nameInput" />
+</view>
+<view class="item">
+  <view class="left">
+    <text class="import">*</text>手机号码
+  </view>
+  <view wx:if="{{!sending}}">
+    <button class="code" bindtap="codeTap">获取验证码</button>
+  </view>
+  <view wx:else>
+    <button class="code">{{second}}s</button>
+  </view>
+  <input type="number" value="{{mobile}}" bindinput="mobileInput" />
+</view>
+<view class="item">
+  <button type="warn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+</view>
+<view class="item">
+  <view class="left">
+    <text class="import">*</text>验证码
+  </view>
+  <input type="text" bindinput="codeInput" />
+</view>
+<!--navigator url="">确定</navigator-->
+<button class="submit" bindtap="submitTap">确定</button>

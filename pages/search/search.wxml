@@ -1,0 +1,13 @@
+<view class="search">
+  <input  placeholder="请输入药品名称、品牌或症状" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}"/>
+  <image src="/image/search.png" class="btn-search" bindtap="keywordSearch"></image>
+</view>
+<view class="serchbox">
+  <view class="tip">
+    <image src="/image/search.png" class="btn-search"></image>
+    热门搜索
+  </view>
+   <view class="popSearch" >
+    <text wx:for="{{popSearch}}" wx:key="search" id="{{popSearch.id}}">{{item.name}}</text>
+   </view> 
+</view>

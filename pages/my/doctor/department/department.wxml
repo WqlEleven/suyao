@@ -1,0 +1,12 @@
+<view class='county'>
+  <block wx:for="{{departmentList}}" wx:key="{{index}}">
+    <view bindtap='changeDepartment' class='item {{activeIndex == index ? "active" : ""}}' data-id='{{index}}' id="{{item.id}}">{{item.name}}</view>
+  </block>
+</view>
+
+<view class='hospitalList'>
+  <block wx:for="{{department}}" wx:key="{{department}}" wx:if="{{department.length > 0}}">
+    <view bindtap='selectDepartment' class='item' id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+  </block>
+  <view class="nodata" wx:if="{{department.length == 0}}">暂无数据</view>
+</view>

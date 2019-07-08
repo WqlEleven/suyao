@@ -1,0 +1,221 @@
+/* pages/my/examination/examDetail/examDetail.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+.exam .title {
+  background: #c40000;
+  padding: 30rpx 25rpx;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 35rpx;
+  display: flex;
+}
+
+.exam .title image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 20rpx;
+}
+
+.exam .item {
+  padding: 10rpx 0rpx 0;
+  border-bottom: 4rpx solid #f2f2f2;
+  background: #fff;
+}
+
+.exam .item .list_title {
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+  color: #4d4c4c;
+}
+
+.answer .list {
+  padding: 10rpx 30rpx;
+  font-size: 24rpx;
+  line-height: 35rpx;
+  color: #727272;
+}
+
+.answer .list text {
+  float: left;
+  width: 35rpx;
+  height: 35rpx;
+  background: #c7c7c7;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35rpx;
+  margin-right: 20rpx;
+}
+
+.answer .list.on {
+  color: #d70000;
+}
+
+.answer .list.on text {
+  background: #d70000;
+}
+.answer .list.correct{
+  color:#17A05D;
+}
+.answer .list.correct text {
+  background: #17A05D;
+}
+.answer .bottom_bank {
+  height: 100rpx;
+  width: 100%;
+}
+.answer_show{
+  border-bottom:8rpx solid #f2f2f2;
+  line-height: 80rpx;
+  border-top: 1px solid #f2f2f2;
+  padding:0 30rpx;
+}
+.answer_show text{
+  color:#17A05D;
+  font-size:30rpx;
+}
+.answer_show text.red{
+  color:#d70000;
+}
+
+.exam .bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  border-top: 1px solid #bebebe;
+  background: #fff;
+}
+
+.exam .fl {
+  width: 325rpx;
+  float: left;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #949494;
+  padding-left: 50rpx;
+}
+
+.exam .fl .time {
+  color: #c40000;
+  font-size: 34rpx;
+  line-height: 100rpx;
+  margin-left: 20rpx;
+}
+
+.exam button.fr {
+  width: 200rpx;
+  background: #c40000;
+  color: #fff;
+  float: right;
+  line-height: 100rpx;
+  border-radius: 0;
+  font-size: 30rpx;
+}
+
+.opa {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.grade {
+  width: 700rpx;
+  background: #fff;
+  position: fixed;
+  left: 25rpx;
+  top: 20%;
+  padding: 60rpx 0 30rpx;
+}
+
+.grade .close {
+  width: 66rpx;
+  height: 66rpx;
+  position: absolute;
+  top: -120rpx;
+  left: 50%;
+  margin-left: -33rpx;
+}
+
+.grade .success {
+  width: 270rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.grade .gradetitle {
+  text-align: center;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+  color: #4d4c4c;
+}
+
+.grade .score {
+  font-size: 24rpx;
+  color: #4d4c4c;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+
+.grade .score text {
+  font-size: 80rpx;
+  color: #c40000;
+}
+
+.grade .score-list {
+  display: flex;
+  border-top: 1px solid #bebebe;
+  padding: 60rpx 0;
+}
+
+.grade .score-list .score_item {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #bebebe;
+  color: #4d4c4c;
+}
+
+.grade .score-list .score_item .tit {
+  padding-bottom: 20rpx;
+}
+
+.grade .score-list .score_item text {
+  font-size: 40rpx;
+  color: #c40000;
+}
+
+.grade .score-list .score_item:last-child {
+  border: none;
+}
+
+.grade .button {
+  width: 620rpx;
+  margin: 0 auto;
+  background: #c40000;
+  border-radius: 0;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 90rpx;
+}
+.fixed{
+  position:fixed;
+  bottom:0;
+  left:0;
+  background:#c40000;
+  padding:30rpx 25rpx;
+  font-size:30rpx;
+  color:#fff;
+  line-height:35rpx;
+  width: 100%;
+}
+.perch{
+  height: 94rpx;
+  width:100%;
+}

@@ -1,0 +1,179 @@
+page{
+  background-color: #eeeeee;
+}
+.tab{
+  background-color: #c40000;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+}
+.tabList{
+  width: 20%;
+  float: left;
+}
+.tabList.on{
+  background-color: #9f0000;
+}
+
+.orderList{
+  margin-bottom: 20rpx;
+}
+.orderItem{
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 0 20rpx;
+}
+.headerInfo{
+  height: 66rpx;
+  line-height: 66rpx;
+  border-bottom: solid 1px #eee;
+  font-size: 22rpx;
+  color: #999;
+}
+.orderNo{
+  margin-right: 50rpx;
+  color: #333;
+}
+.statu{
+  font-size: 24rpx;
+}
+
+.goodsListItem{
+  padding: 20rpx 0;
+  border-bottom: solid 1px #ededed;
+}
+.userStatu{
+  width: 32rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  border-radius: 4rpx;
+  color: #fff;
+  display: none;
+}
+.userStatu.seller{
+  display: inline-block;
+  background-color: #ea8018;
+  margin-right: 12rpx;
+}
+.userStatu.buyers{
+  display: inline-block;
+  background-color: #c40000;
+  margin-right: 12rpx;
+}
+
+.goodsListItem text{
+  display: block;
+}
+.goodsPic{
+  width: 160rpx;
+  height: 125rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.goodsInfo{
+  width: 350rpx;
+  float: left;
+}
+.PriceNum{
+  margin-top: 12rpx;
+  width: 172rpx;
+  float: left;
+  text-align: right;
+  color: #666;
+}
+.goodsName{
+  margin-top: 12rpx;
+  padding: 10rpx 0;
+  font-size: 26rpx;
+  color: #000;
+}
+.goodsDes{
+  font-size: 22rpx;
+  color: #666;
+}
+.goodsSpec{
+  padding-top: 20rpx;
+  font-size: 26rpx;
+}
+.goodsPrice{
+  padding: 10rpx 0;
+  font-size: 26rpx;
+  color: #000;
+}
+.goodsNum{
+  font-size:20rpx;
+}
+
+.priceDetail{
+  padding-top: 18rpx;
+  overflow: hidden;
+  text-align: right;
+  color: #4c4c4c;
+}
+.priceDetail .text{
+  display: inline-block;
+  padding: 5rpx 0;
+  clear: both;
+  margin-right: 12rpx;
+  font-size: 24rpx;
+}
+.priceDetail .money.text{
+  color: #000;
+}
+.priceDetail .discount.text{
+  font-size: 22rpx;
+  color: #ce3b3b;
+}
+.priceDetail .postage.text{
+  font-size: 20rpx;
+  color: #a6a6a6;
+}
+
+.opration{
+  padding-bottom: 20rpx;
+  clear:both;
+  overflow: hidden;
+}
+.del{
+  margin-top: 20rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  padding: 0 20rpx;
+  border-radius: 6rpx;
+  border:solid 1px #505050;
+  margin-left:20rpx;
+}
+.nullOrder{
+   text-align: center;
+   margin-top:20rpx;
+}
+.footer{
+  background:#f9f9f9;
+  color:#a9b7b7;
+  font-size: 24rpx;
+  text-align: center;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  padding: 10rpx 0 5rpx;
+}
+.footer navigator{
+  display: inline-block;
+  width: 25%;
+}
+.footer navigator image{
+
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin: 0 auto 8rpx;
+}
+.footer .cur{
+  color: #1b1b1b
+}
+.blank{
+  height: 97rpx
+}

@@ -1,0 +1,2 @@
+<image class="qrcode clearfix" mode="widthFix" src="{{filePath}}"></image>
+<view class="btn-save" bindtap='download'>保存二维码到相册</view>

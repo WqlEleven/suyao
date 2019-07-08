@@ -1,0 +1,148 @@
+page{
+  background-color: #f1f1f1;
+}
+.text-right{
+  text-align: right;
+}
+.item{
+  background-color: #fff;
+  border-top: solid 1px #e4e4e4;
+  margin-bottom: 7rpx;
+  font-size: 26rpx;
+  color: #4e4e4e;
+  clear: both;
+}
+.arrow_wrap {
+    position: absolute;
+    width: 28rpx;
+    height: 28rpx;
+    right: 20rpx;
+    top: 24rpx;
+}
+.toAddress,
+.ticket,
+.goodsTotalNum,
+.priceDetail,
+.notice{
+  height: 74rpx;
+  line-height: 74rpx;
+  position: relative;  
+  padding: 0 24rpx;
+}
+.goodsList{
+  border-top: solid 1px #f2f2f2;
+  border-bottom: solid 1px #f2f2f2;
+  padding-bottom: 35rpx;
+}
+.goods{
+  padding: 35rpx 24rpx 0;
+  overflow: hidden;
+}
+.goods text{
+  line-height: 30rpx;
+  display: block;
+}
+.goodsPic{
+  width: 160rpx;
+  height: 125rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.goodsInfo{
+  width: 350rpx;
+  float: left;
+}
+.PriceNum{
+  width: 172rpx;
+  float: left;
+  text-align: right;
+}
+.goodsName{
+  font-size: 26rpx;
+  color: #4d4c4c;
+}
+.goodsDes{
+  font-size: 22rpx;
+}
+.goodsSpec{
+  padding-top: 20rpx;
+  font-size: 26rpx;
+}
+.goodsPrice{
+  font-size: 26rpx;
+  margin-bottom: 50rpx;
+}
+.priceDetail .text{
+  padding-right: 40rpx;
+  display: inline-block;
+}
+.priceDetail text{
+  color: #ce3b3b;
+}
+
+.defaultAddress{  
+  padding: 0 24rpx;
+  background-color: #fff;
+}
+.defaultAddress .user{
+  padding:10px 0;
+}
+.defaultAddress .user:after{
+  content:"";
+  display: block;
+  clear: both;
+}
+.defaultAddress .name{
+  font-size: 16px;
+  float: left;
+  color:#333;
+}
+.defaultAddress .tel{
+  font-size: 16px;
+  padding-left: 30rpx;
+  color:#333;
+}
+.defaultAddress .ress{
+  padding-bottom:15px;
+  font-size:12px;
+  color:#999;
+}
+
+
+.footer{
+  background: #fff;
+  position: fixed;
+  border-top:1px solid #eee;
+  left:0;
+  right:0;
+  bottom: 0;
+  height: 40px;
+}
+.footer .right{
+  float: right;
+}
+.footer .left{
+  float: left;
+}
+.footer .left {
+  line-height: 40px;
+  font-size: 14px;
+  padding-left:15px;
+  color:#2f2f2f;
+}
+.footer .left .span {
+  color:#000;
+  padding-left:5px;
+}
+.footer .right button{
+  height: 40px;
+  background-color: #c40000;
+  border:none;
+  border-radius: 0;
+  color:#fff;
+  padding:0 40px;
+  font-size: 30rpx;
+}
+.blank{
+   height: 80rpx;
+}

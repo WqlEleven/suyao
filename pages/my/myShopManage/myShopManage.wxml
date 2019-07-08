@@ -1,0 +1,62 @@
+<view class="search">
+  <input placeholder="请输入药品名称、品牌或症状" focus="{{focus}}" bindfocus="showSearch" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}" />
+  <image src="/image/search.png" class="btn-search" bindtap="search"></image>
+</view>
+<view wx:if="{{!search}}">
+  <view class="tab">
+    <block wx:for-items="{{list}}" wx:for-item="item" wx:key="{{index}}">
+      <view data-id="{{item.id}}" id="{{index}}" class="tabList {{activeIndex == index ? 'on' : ''}}" bindtap="tabClick">
+        <view>{{item.listTit}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="goodsList">
+    <block wx:for="{{goodsList}}" wx:key="{{index}}">
+      <navigator url="{{item.is_rx == 1 ? '/pages/recipegoodsDetail/recipegoodsDetail' : '/pages/goodsDetail/goodsDetail'}}?id={{item.id}}">
+        <view class="goods overHidden {{item.status == 0 ? 'off' : ''}}">
+          <image class="goodsPic" wx:if="{{item.picture}}" src="{{item.pictures}}"></image>
+          <image class="goodsPic" wx:else src="/image/category-img-404.png"></image>
+          <view class="goodsInfo">
+            <text wx:if="{{item.is_hot==1}}" class="spacial">特卖</text>
+            <text wx:if="{{item.is_rx == 1}}" class="spacialdis">Rx</text>
+            <text class="goodsName">{{item.name}}</text>
+            <text class="goodsDes">{{item.effect}}</text>
+            <view>
+              <text class="goodsPrice">￥{{item.price}}</text>
+              <text class="goodsearn">赚￥{{item.money_1}}</text>
+              <text class="goodsStock">库存：{{item.stock}}</text>
+            </view>
+            <text class="goodsNum">在售人数 {{item.choice_num}}</text>
+            <view class='btn' data-id="{{item.id}}" data-set="1" wx:if="{{item.choice.is_choice==0}}" bindtap="Selected">设为精选</view>
+            <view class="un-btn" data-id="{{item.id}}" data-set="0" wx:else bindtap="Selected">取消精选</view>
+          </view>
+          <!-- 加入套餐 -->
+          <view class="opration" wx:if="{{(item.is_rx == 0 && (user.level_id >= 2 || user.is_doctor == 1)) || (item.is_rx == 1 && user.level_id >= 2 && user.is_doctor == 1)}}">
+            <image mode="widthFix" class='addCar' id="{{item.id}}" wx:if="{{item.in_prescript == 0}}" catchtap="add" data-index="{{index}}" src="/image/car2.png"></image>
+            <view class="cart-count-box" wx:if="{{item.in_prescript > 0}}">
+              <image src="/image/reduce.png" class="cart-count-down" catchtap="reduce" id="{{item.id}}" data-index="{{index}}"></image>
+              <text class="cart-count-num">{{item.prescript_num}}</text>
+              <image class="cart-count-add" catchtap="add" id="{{item.id}}" data-index="{{index}}" src="/image/add.png"></image>
+            </view>
+          </view>
+          <image wx:if="{{item.sell}}" class="offFlag" src='/image/off.png'></image>
+        </view>
+      </navigator>
+    </block>
+    <view class="goodsNull" wx:if="{{goodsList.length==0}}">暂无商品</view>
+  </view>
+</view>
+<!-- 搜索  -->
+<view wx:else class="serchbox">
+  <view class="tip">
+    <image src="/image/search.png" class="btn-search"></image>
+    热门搜索
+  </view>
+  <view class="popSearch" wx:for="{{popSearch}}" wx:key="search" id="{{popSearch.id}}">
+    <text bindtap="keywordsName" data-name="{{item.name}}">{{item.name}}</text>
+  </view>
+</view>
+<navigator url='/pages/prescript/prescript' class='goToCart'>
+  <image src='/image/jxtc.png' mode='widthFix'></image>
+  <text>{{cart_num}}</text>
+</navigator>

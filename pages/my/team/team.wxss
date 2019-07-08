@@ -1,0 +1,101 @@
+page{
+  background-color: #f2f2f2;
+  font-size: 26rpx;
+  color: #424242;
+}
+.hide{
+  display: none;
+}
+.tab{
+  background-color: #fff;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+}
+.tabList{
+  border-top: solid #f2f2f2 4rpx;
+  width: 250rpx;
+  float: left;
+}
+.tabList.on{
+  border-top: solid #c00201 4rpx;
+  color: #c00201;
+}
+
+.banner{
+  width: 100%;
+  display: block;
+}
+
+.shopkeeperList,
+.customerList,.visitList{
+  margin: 10rpx 0;
+}
+.shopkeeper-item,
+.customer-item,.visitList .item{
+  background-color: #fff;
+  padding: 12rpx 55rpx;
+  margin-top: 5rpx;
+}
+.header{
+  width: 106rpx;
+  height: 106rpx;
+  margin-right: 16rpx;
+  border: solid 6rpx #e6e6e6;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+.totalNum{
+  color: #bcbcbc;
+}
+
+.visitCount{
+  background-color: #fff;
+  margin: 5rpx 0;
+  padding: 5rpx 0;
+  text-align: center;
+  display: flex;
+  color: #858585;
+}
+.visitCount .item:first-child{
+  border-right: solid 1rpx #f2f2f2;
+}
+.visitCount .item{
+  flex: 1;
+}
+.visitCount text{
+  line-height: 56rpx;
+  display: block;
+}
+.visitCount .num{
+  padding-bottom: 10rpx;
+  font-size: 36rpx;
+  color: #232323;
+}
+.footer{
+  background:#f9f9f9;
+  color:#a9b7b7;
+  font-size: 24rpx;
+  text-align: center;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  padding: 10rpx 0 5rpx;
+}
+.footer navigator{
+  display: inline-block;
+  width: 25%;
+}
+.footer navigator image{
+
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin: 0 auto 8rpx;
+}
+.footer .cur{
+  color: #1b1b1b
+}
+.blank{
+  height: 97rpx
+}

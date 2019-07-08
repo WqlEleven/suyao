@@ -1,0 +1,31 @@
+<!--pages/my/teacher/help/help.wxml-->
+<view class="help">
+  <view class="">
+  <image src="/image/px_02.jpg" style="height:1147rpx"></image>
+  <image src="/image/px_03.jpg" style="height:1150rpx"></image>
+  <image src="/image/px_04.jpg" style="height:1168rpx"></image>
+  <image src="/image/px_05.jpg" style="height:941rpx"></image>
+  <image src="/image/px_06.jpg" style="height:926rpx"></image>
+  <image src="/image/px_07.jpg" style="height:1157rpx"></image>
+  <image src="/image/px_09.jpg" style="height:955rpx"></image>
+  </view>
+</view>
+<view class="blank"></view>
+<view class="footer">
+  <navigator url="../index/index" bindtap="home">
+     <image src="/image/home.png"></image>
+    首页
+  </navigator>
+  <navigator url="/pages/selection/selection" bindtap="selection">
+     <image src="/image/dzjx.png"></image>
+    店主精选
+  </navigator>
+  <navigator url="/pages/car/car" bindtap="car">
+     <image src="/image/car.png"></image>
+    购物车
+  </navigator>
+  <navigator url="/pages/my/my" class="cur" bindtap="my">
+     <image src="/image/my1.png"></image>
+    我的
+  </navigator>
+</view>

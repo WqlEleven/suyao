@@ -1,0 +1,53 @@
+<view class="index-nav">
+  <image src="/image/dzjx_bg.png" class="dzjx_bg"></image>
+  <view class="shares" bindtap="shareShow">
+    <image src="/image/btn_share.png" class="btn_share"></image>
+  </view>
+  <view class="shopkeeper">
+    <view class="shoph">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="shopmess">
+      <text class="firname">{{shoptype}}</text>
+      <text class="secname">{{userInfo.nickName}}(UID:{{user.id}})</text>
+    </view>
+  </view>
+  <view class="usertype" wx:if="{{user.level_id == 0}}">访客</view>
+  <view class="usertype" wx:elif="{{user.level_id == 1}}">顾客</view>
+  <view class="usertype" wx:elif="{{user.level_id == 2}}">店主</view>
+  <view class="usertype" wx:elif="{{user.level_id == 3}}">精英店主</view>
+  <view class="usertype" wx:elif="{{user.level_id == 4}}">总监</view>
+  <view class="usertype" wx:elif="{{user.level_id == 5}}">总裁</view>
+  <view class="usertype" wx:elif="{{user.level_id == 6}}">股东</view>
+  <view class="usertype" wx:else>未知</view>
+</view>
+<view class="nav">
+  <view data-type="1" bindtap='navClick' class="item {{paperType == 1 ? 'on' : ''}}">速药培训考试</view>
+  <view data-type="2" bindtap='navClick' class="item {{paperType == 2 ? 'on' : ''}}">产品培训考试</view>
+</view>
+<view class="video-item" wx:for="{{paperList}}" wx:key="paperList" id="{{item.id}}" data-exam="{{item.is_exam}}" bindtap="examTap">
+  <view class="title">{{item.name}}</view>
+  <view class="time">考试时间：{{item.time}}分</view>
+  <view class="total">总分：{{item.score}}分</view>
+  <view class="score" wx:if="{{item.is_exam}}">得分：
+    <text>{{item.exam.score}}分</text>
+  </view>
+  <image src="/image/icon-arrow.png"></image>
+</view>
+<!-- 分享弹窗 -->
+<view class="shareBox" wx:if="{{shareBtn}}">
+  <view class="blankShare" catchtap="closeShare"></view>
+  <view class="win_share">
+    <view class="share1">
+      <!-- <text>分享给好友</text> -->
+      <button open-type="share">
+        <image src="/image/btn_wx.png"></image>
+        <text>分享给好友</text>
+      </button>
+    </view>
+    <view class="share1" catchtap="saveCode">
+      <image src="/image/btn_er.png"></image>
+      <text>保存二维码</text>
+    </view>
+  </view>
+</view>

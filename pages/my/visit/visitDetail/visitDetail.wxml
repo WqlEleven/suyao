@@ -1,0 +1,11 @@
+<!--pages/my/visit/visitDetail.wxml-->
+<view class="customer">
+  <!-- <image src="/image/team02.jpg" mode='widthFix' class="banner"></image> -->
+  <view class="customerList">
+    <view class="customer-item" wx:for='{{customer}}' wx:key="customer">
+      <image src="{{item.avatar}}" class="header"></image>
+      <text>{{item.nickname}}</text>
+    </view>
+  </view>
+  <text class="totalNum block text-center">共{{num}}名</text>
+</view>

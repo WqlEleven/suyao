@@ -1,0 +1,140 @@
+/**index.wxss**/
+page{
+  background: #f5f5f5;
+}
+.index-nav{
+  background-color: #fff;
+  position: relative;
+  font-size:26rpx;
+  width: 100%;
+  padding-bottom: 90rpx;
+}
+.index-nav .dzjx_bg{
+  width: 100%;
+  height: 252rpx;
+}
+.shopkeeper{
+  position: absolute;
+  left:26rpx;
+  bottom: 18rpx;
+}
+.shopkeeper .shoph{
+  background-color: #fff;
+  border-radius: 5px;
+  width: 140rpx;
+  height: 140rpx;
+}
+.shopkeeper .shoph image{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 6rpx;
+}
+.shopkeeper .shopmess{
+  position: absolute;
+  left:154rpx;
+  width: 500rpx;
+  bottom:0; 
+}
+.shopkeeper .firname{
+  font-size: 30rpx;
+  color: #373737;
+  line-height: 38rpx;
+}
+.shopkeeper .firname text{
+   display: block
+}
+.shopkeeper .secname{
+  color: #6a6a6a;
+  font-size: 26rpx;
+}
+.nav{
+  position: absolute;
+  right:20rpx;
+  top:40rpx;
+  color:#fff;
+  line-height: 35rpx;
+}
+.menu{
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 5rpx;
+  vertical-align: top;
+}
+ .sec-nav{
+  font-size: 26rpx;
+  position: absolute;
+  top:100rpx;
+  right: 20rpx;
+  display: none
+}
+.index-menu{
+  background-color: #fff;
+  color: #000;
+  font-size: 30rpx;
+}
+.now-go{
+  margin-top: 16rpx;
+  background-color: #fff;
+  padding:16rpx 0;
+  border-top:1px #d5d5d5 solid;
+  border-bottom:1px #d5d5d5 solid;
+}
+.now-go navigator{
+  display: block
+}
+.now-go image{
+  width: 100%;
+  height: 324rpx;
+}
+.now-go .mess{
+  padding:14rpx 18rpx 18rpx;
+}
+.now-go .mess .spacial{
+  color: #d60005;
+  border:1px solid #d60005;
+  font-size: 20rpx;
+  padding:2rpx 5rpx;
+}
+.now-go .mess .spacialdis{
+  color: #fff;
+  font-size: 20rpx;
+  padding: 4rpx 13rpx;
+  background:#d60005;
+  border-radius:18rpx;
+  margin-left:10rpx;
+}
+.now-go .mess .tit{
+  font-size: 30rpx;
+  margin-left: 26rpx;
+  line-height: 35rpx;
+  vertical-align: middle
+}
+.now-go .mess-price .price{
+  color: #d60005;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  padding-top: 20rpx;
+}
+.now-go .mess-price .price text{
+  font-size: 20rpx;
+}
+.now-go .mess-price .btn{
+  font-size: 24rpx;
+  color: #666666;
+  padding: 12rpx;
+  border:1px solid #666;
+  float: right;
+}
+.now-go .mess-price .stock {
+  color: #666;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  padding-top: 20rpx;
+  margin-left: 15rpx;
+}
+
+.product-null{
+    padding: 40rpx 0;
+    color: #999;
+    text-align: center; 
+}

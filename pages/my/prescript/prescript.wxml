@@ -1,0 +1,62 @@
+<!--pages/my/prescript/prescript.wxml-->
+<view class="orderList">
+   <block wx:if="{{orderList}}" wx:key="{{order}}" wx:for-items="{{orderList}}">
+      <view class="orderItem">
+         <view class="headerInfo overHidden clearfix">
+
+            <text wx:if="{{item.userStatu == 0}}" class="userStatu seller">卖</text>
+            <text wx:elif="{{item.userStatu == 1}}" class="userStatu buyers">买</text>
+            <text wx:else="{{item.userStatu == 2}}" class="userStatu"></text>
+
+            <text class="orderNo">套餐ID：{{item.id}}</text>
+            <text class="time">{{item.add_time}}</text>
+            <text class="statu right" wx:if="{{item.status==0}}">正常</text>
+            <text class="statu right" wx:if="{{item.status==1}}">禁用</text>
+            <text class="statu right" wx:if="{{item.status==2}}">删除</text>
+         </view>
+
+         <view id="{{item.orderNo}}" data-id="{{item.id}}" bindtap="showOrder">
+            <view wx:for-items="{{item.goods_list}}" wx:key="{{goods_list}}" wx:for-item="goods" class="goodsListItem overHidden">
+               <image class="goodsPic" src="{{goods.picture}}"></image>
+               <view class="goodsInfo">
+                  <text class="goodsName">{{goods.name}}</text>
+                  <text class="goodsDes">{{goods.effect}}</text>
+               </view>
+               <view class="PriceNum">
+                  <text class="goodsPrice">￥{{goods.price}}</text>
+                  <text class="goodsNum">×{{goods.num}}</text>
+               </view>
+            </view>
+         </view>
+
+         <view class="priceDetail overHidden">
+            <view class="text money">总价：<text>¥{{item.money}}</text></view>
+         </view>
+         <view class="opration clearfix">
+            <view class="del right" data-id="{{item.id}}" bindtap="showOrder">查看</view>
+         </view>
+      </view>
+   </block>
+   <view wx:if="{{!orderList}}"> 
+      <view class="nullOrder">您还没有生成商品套餐！</view>
+   </view>
+</view>
+<view class="blank"></view>
+<view class="footer">
+  <navigator url="../index/index" bindtap="home">
+     <image src="/image/home.png"></image>
+    首页
+  </navigator>
+  <navigator url="/pages/selection/selection" bindtap="selection">
+     <image src="/image/dzjx.png"></image>
+    店主精选
+  </navigator>
+  <navigator url="/pages/car/car" bindtap="car">
+     <image src="/image/car.png"></image>
+    购物车
+  </navigator>
+  <navigator url="/pages/my/my" class="cur" bindtap="my">
+     <image src="/image/my1.png"></image>
+    我的
+  </navigator>
+</view>

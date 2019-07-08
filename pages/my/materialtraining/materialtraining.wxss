@@ -1,0 +1,227 @@
+.index-nav{
+  background-color: #fff;
+  position: relative;
+  font-size:26rpx;
+  width: 100%;
+  padding-bottom: 90rpx;
+  border-bottom:10rpx solid #f2f2f2;
+}
+.index-nav .dzjx_bg{
+  width: 100%;
+  height: 252rpx;
+}
+.shopkeeper{
+  position: absolute;
+  left:26rpx;
+  bottom: 18rpx;
+}
+.shopkeeper .shoph{
+  background-color: #fff;
+  border-radius: 5px;
+  width: 140rpx;
+  height: 140rpx;
+}
+.shopkeeper .shoph image{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 6rpx;
+}
+.shopkeeper .shopmess{
+  position: absolute;
+  left:154rpx;
+  width:440rpx;
+  bottom:0; 
+}
+.shopkeeper .shopmess text{
+  display: block;
+}
+.shopkeeper .firname{
+  font-size: 30rpx;
+  color: #373737;
+  line-height: 38rpx;
+}
+.shopkeeper .secname{
+  color: #6a6a6a;
+  font-size: 26rpx;
+}
+.usertype{
+  font-size: 26rpx;
+  color: #d80000;
+  border:1px solid #d80000;
+  border-radius: 2px;
+  /*width: 102rpx;*/
+  line-height: 44rpx;
+  text-align: center;
+  position: absolute;
+  right: 25rpx;
+  bottom: 22rpx;
+}
+.nav{
+  width:100%;
+  display:flex;
+  border-bottom: 1px solid #f2f2f2;
+  text-align:center;
+}
+.nav .item{
+  flex: 1;
+  text-align: center;
+  line-height:40rpx;
+  font-size: 30rpx;
+  padding: 20rpx 50rpx;
+  border-bottom: 2px solid #fff;
+}
+.nav .item.on{
+  color:#d70000;
+  border-bottom: 2px solid #d70000;
+}
+.nav.titNav .item{
+  background: #d1d1d1;
+  border:none;
+  color:#fff;  
+}
+.nav.titNav .item.on{
+  background: #d60f0f;
+}
+.nav .item image{
+  width:40rpx;
+  height:40rpx;
+  margin-right:20rpx;
+}
+.video-item{
+  padding: 20rpx;
+  width:100%;
+  box-sizing:border-box;
+  border-bottom: 10rpx solid #f2f2f2;
+}
+.video-item .pic-box{
+  width: 100%;
+  position:relative;
+}
+.video-item .pic-box .bg{
+  width:100%;
+  height:345rpx;
+  border-radius:10rpx;
+}
+.video-item .pic-box .play{
+  position:absolute;
+  width: 80rpx;
+  height:80rpx;
+  left:50%;
+  top: 50%;
+  margin-left:-40rpx;
+  margin-top:-40rpx;
+}
+.video-item .pic-box text{
+  position:absolute;
+  right:20rpx;
+  bottom:20rpx;
+  font-size: 24rpx;
+  color:#fff;
+}
+.video-item .title{
+  padding:10rpx 0;
+  font-size: 26rpx;
+  color:#4d4c4c;
+  line-height:34rpx;
+}
+.ppt-item{
+  width:100%;
+  padding:20rpx;
+  box-sizing:border-box;
+  display:flex;
+  border-bottom: 10rpx solid #f2f2f2;
+  align-items:center;
+}
+.ppt-item .icon{
+  width:180rpx;
+  height:180rpx;
+  border-radius:10rpx;
+}
+.ppt-item .load{
+  width:40rpx;
+  height:40rpx;
+}
+.ppt-item .con{
+  width:420rpx;
+  margin: 0 30rpx;
+}
+.ppt-item .con .h5{
+  font-size: 30rpx;
+  color:#4d4c4c;
+  padding-bottom: 20rpx;
+}
+.ppt-item .con p{
+  font-size: 24rrpx;
+  color:#727272;
+  line-height:30rpx;
+}
+.shares{
+  background: rgba(0, 0, 0, 0.5);
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:24rpx;
+  right:30rpx;
+  overflow: hidden;
+}
+.btn_share{ 
+  width: 50rpx;
+  height: 50rpx;
+  margin: 15rpx auto;
+  display: block
+}
+.shareBox{
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+}
+.shareBox video{
+  margin-top:300rpx;
+  width:100%;
+}
+.shareBox .win_share{
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 40rpx 0;
+  z-index: 22;
+}
+.shareBox .win_share .share1{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.shareBox .win_share .share1 image{
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block
+}
+.shareBox .win_share .share1 text{
+  display: block;
+  margin-top: 20rpx;
+}
+.blankShare{
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 80%;
+}
+.shareBox button{
+  background:transparent;
+  font-size:26rpx;
+  color:#414141;
+  line-height:45rpx;
+} 
+.shareBox button::after {
+  border:0;
+  font-size: 26rpx;
+  background-color: fff;
+}
+.shareBox .win_share .share1 button text{
+  display: block;
+  margin-top: 13rpx
+}

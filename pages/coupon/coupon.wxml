@@ -1,0 +1,44 @@
+<view class="tab">
+  <block wx:for="{{tabList}}" wx:key="{{index}}">
+    <view id="{{index}}" class="tabList {{activeIndex == index ? 'on' : ''}}" bindtap="tabClick">
+      <view>{{item.listTit}}</view>
+    </view>
+  </block>
+</view>
+<view class="btn-help" bindtap="usehelp">使用帮助</view>
+<view class="ticketList">
+  <view wx:for="{{ticketsList}}" wx:key="tickets" class="ticket">
+    <view class="ticketInfo {{item.use?'used':''}}">
+      <view class="ticketBg"><image src="/image/ticketBg1.jpg"></image></view>
+      <view class="ticketBg1" wx:if="{{item.use}}"><image src="/image/ticketBg2.jpg"></image></view>
+      <text class="name">{{item.name}}</text>
+      <view class="money"><text>￥</text>{{item.money|parseInt}}</view>
+      <text class="use" wx:if="{{item.status == 1}}">已使用</text>
+      <text class="use" wx:else>未使用</text>
+    </view>
+    <view class="ticketLimit">
+      <text>速药店铺通用</text>
+      <text>有效期：{{item.start_date}}-{{item.end_date}}</text>
+      <text></text>
+    </view>
+  </view>
+</view>
+<view class="blank"></view>
+<view class="footer">
+  <navigator url="../index/index" bindtap="home">
+     <image src="/image/home.png"></image>
+    首页
+  </navigator>
+  <navigator url="/pages/selection/selection" bindtap="selection">
+     <image src="/image/dzjx.png"></image>
+    店主精选
+  </navigator>
+  <navigator url="/pages/car/car" bindtap="car">
+     <image src="/image/car.png"></image>
+    购物车
+  </navigator>
+  <navigator url="/pages/my/my" class="cur" bindtap="my">
+     <image src="/image/my1.png"></image>
+    我的
+  </navigator>
+</view>

@@ -1,0 +1,23 @@
+<view>
+  <view class='tableItem'>
+    <view class='item'> </view>
+    <view class='item'>上午</view>
+    <view class='item'>下午</view>
+    <view class='item'>晚上</view>
+  </view>
+  <checkbox-group bindchange="checkboxChange">
+    <view class='tableItem' wx:for="{{visitTime}}" wx:key="visitTime">
+      <view class="item">{{item.day}}</view>
+      <label class="checkbox item" data-value='{{item.morning}}' data-index='{{index}}' bindtap='changeStatu1'>
+        <image src="{{item.morning==0 ? '/image/icon-check.png' : '/image/icon-check-on.png'}}"></image>
+      </label>
+      <label class="checkbox item" data-value='{{item.afternoon}}' data-index='{{index}}' bindtap='changeStatu2'>
+        <image src="{{item.afternoon==0 ? '/image/icon-check.png' : '/image/icon-check-on.png'}}"></image>
+      </label>
+      <label class="checkbox item" data-value='{{item.night}}' data-index='{{index}}' bindtap='changeStatu3'>
+        <image src="{{item.night==0 ? '/image/icon-check.png' : '/image/icon-check-on.png'}}"></image>
+      </label>
+    </view>
+  </checkbox-group>
+</view>
+<view class='btn-submit' bindtap='submit'>保存</view>

@@ -1,0 +1,13 @@
+<view wx:for="{{goods}}" wx:key="goods">
+  <navigator url='/pages/my/gift/gift?id={{item.id}}&parent_id={{pid}}'>
+    <image src="{{item.src}}" class="slide-image"></image>
+  </navigator>
+  <view id="{{item.id}}" class="title" bindtap='clickCheck' data-index="{{index}}">
+    {{item.name}}（邀请人：{{user.nickname}}）
+    <view class="price">￥{{item.price}}</view>
+    <image wx:if="{{item.isCheck}}" class="pos" src="/image/choose_p.png"></image>
+    <image wx:else class="pos" src="/image/choose_n.png"></image>
+  </view>
+</view>
+<view class="blank"></view>
+<view id="{{goods.id}}" class="buy" bindtap="buyTap">立刻购买</view>

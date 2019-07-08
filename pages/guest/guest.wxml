@@ -1,0 +1,5 @@
+<!--pages/guest/guest.wxml-->
+<view class="tip">您没有推荐人或还不是店主，请联系客服！</view>
+<!--navigator url="url">联系客服</navigator>
+<contact-button session-from="guest"></contact-button-->
+<button class="contact" open-type="contact">联系客服</button>
